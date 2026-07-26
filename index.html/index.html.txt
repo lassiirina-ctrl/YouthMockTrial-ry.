@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Youth Mock Trial ry</title>
-  </head>
-  <body>
-    <h1>Welcome to Youth Mock Trial ry</h1>
-    <p>Empowering youth through legal education and competition.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Youth Mock Trial ry</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+    header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+    nav { background: #333; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; }
+    footer { text-align: center; padding: 20px; background: #1a1a1a; color: white; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Youth Mock Trial ry</h1>
+  <p>Empowering youth through legal education and competition</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="competition.html">Competition</a>
+  <a href="sponsors.html">Sponsors</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h2>Welcome</h2>
+  <p>
+    Youth Mock Trial ry is a national organization dedicated to providing young people with
+    hands-on experience in law, advocacy, and courtroom procedure. Our mission is to make
+    legal education accessible, engaging, and empowering.
+  </p>
+
+  <h3>What We Offer</h3>
+  <ul>
+    <li>National-level mock trial competitions</li>
+    <li>Workshops and training for students</li>
+    <li>Partnerships with schools and youth organizations</li>
+    <li>Opportunities to learn real courtroom skills</li>
+  </ul>
+</div>
+
+<footer>
+  © 2026 Youth Mock Trial ry — All Rights Reserved
+</footer>
+
+</body>
 </html>
 
