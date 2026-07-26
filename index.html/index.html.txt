@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HYMT</title>
+    <title>Youth Mock Trial ry</title>
   </head>
   <body>
-    <h1>Welcome to HYMT</h1>
-    <p>National Youth Mock Trial Program</p>
+    <h1>Welcome to Youth Mock Trial ry</h1>
+    <p>Empowering youth through legal education and competition.</p>
   </body>
 </html>
+
