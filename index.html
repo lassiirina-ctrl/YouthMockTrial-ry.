@@ -1,19 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youth Mock Trial ry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    @keyframes slide-in-left {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
 
-    @keyframes slide-in-right {
-      from { opacity: 0; transform: translateX(30px); }
-      to { opacity: 1; transform: translateX(0); }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Animations */
+    @keyframes slide-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fade-in {
@@ -21,163 +21,144 @@
       to { opacity: 1; }
     }
 
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif; 
-      background: #FFFFFF;
+    body {
+      font-family: Inter, sans-serif;
+      background: #FAF8F5; /* warm cream */
       color: #1A1A1A;
-      line-height: 1.6;
-      min-height: 100vh;
+      line-height: 1.7;
     }
 
-    header { 
-      background: #000000;
-      color: white; 
-      padding: 40px 20px;
+    /* Header */
+    header {
+      background: #FAF8F5;
+      padding: 80px 20px;
       text-align: center;
-      position: relative;
-      border-bottom: 2px solid #E0E0E0;
+      border-bottom: 2px solid #E6E2DD;
+      animation: fade-in 0.8s ease-out;
     }
 
     .logo {
-      max-width: 80px;
-      height: auto;
-      margin-bottom: 15px;
-      animation: slide-in-left 0.8s ease-out;
+      max-width: 90px;
+      margin-bottom: 20px;
+      animation: slide-in-up 0.8s ease-out;
     }
 
     header h1 {
-      font-size: 3.5em;
+      font-family: "Playfair Display", serif;
+      font-size: 3.2em;
       font-weight: 700;
-      margin-bottom: 15px;
       letter-spacing: -1px;
-      animation: slide-in-left 0.8s ease-out;
+      margin-bottom: 10px;
+      animation: slide-in-up 0.9s ease-out;
     }
 
     header p {
-      font-size: 1.1em;
-      font-weight: 400;
-      letter-spacing: 1px;
-      opacity: 0.9;
-      animation: slide-in-right 0.8s ease-out 0.2s both;
+      font-size: 1.15em;
+      opacity: 0.85;
+      animation: slide-in-up 1s ease-out;
     }
 
-    header .subtitle-accent {
+    .subtitle-accent {
       display: inline-block;
+      margin-top: 25px;
       padding: 12px 24px;
-      background: #FFFFFF;
-      color: #000000;
-      border-radius: 2px;
-      margin-top: 20px;
+      background: #D8C7B8; /* warm taupe */
+      color: #000;
       font-weight: 600;
-      font-size: 0.95em;
-      letter-spacing: 0.5px;
-      animation: fade-in 0.8s ease-out 0.4s both;
+      border-radius: 4px;
+      animation: fade-in 1.2s ease-out;
     }
 
-    nav { 
+    /* Navigation */
+    nav {
       background: #FFFFFF;
-      border-bottom: 1px solid #E0E0E0;
-      padding: 0;
+      border-bottom: 1px solid #E6E2DD;
       display: flex;
       justify-content: center;
-      flex-wrap: nowrap;
+      gap: 10px;
+      padding: 12px 10px;
       position: sticky;
       top: 0;
       z-index: 100;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
     }
 
-    nav a { 
-      color: #1A1A1A; 
-      padding: 16px 20px;
-      text-decoration: none; 
+    nav a {
+      text-decoration: none;
+      color: #1A1A1A;
       font-weight: 600;
-      position: relative;
+      padding: 12px 18px;
+      border-radius: 4px;
       transition: all 0.3s ease;
-      font-size: 0.95em;
-      letter-spacing: 0.5px;
-      overflow: hidden;
-      border-bottom: 3px solid transparent;
-      flex-shrink: 0;
-      white-space: nowrap;
     }
 
     nav a:hover {
-      background: #F5F5F5;
-      border-bottom-color: #000000;
+      background: #F0ECE8;
     }
 
-    .container { 
-      max-width: 1200px; 
-      margin: 0 auto; 
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 60px 20px;
-      position: relative;
     }
 
+    /* Section Titles */
     h2 {
-      font-size: 2.8em;
-      font-weight: 700;
-      margin: 50px 0 30px 0;
+      font-family: "Playfair Display", serif;
+      font-size: 2.4em;
+      margin-bottom: 20px;
       position: relative;
-      padding-bottom: 20px;
-      color: #000000;
-      animation: slide-in-left 0.6s ease-out;
+      animation: slide-in-up 0.6s ease-out;
     }
 
     h2::before {
       content: '';
       position: absolute;
+      bottom: -8px;
       left: 0;
-      bottom: 0;
       width: 60px;
-      height: 2px;
-      background: #000000;
+      height: 3px;
+      background: #000;
     }
 
+    /* Intro Section */
     .intro-section {
-      background: #F5F5F5;
-      padding: 50px;
-      border-radius: 0;
-      border-left: 3px solid #000000;
-      margin-bottom: 50px;
-      transition: all 0.3s ease;
-      animation: slide-in-right 0.7s ease-out 0.3s both;
-    }
-
-    .intro-section:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: #FFFFFF;
+      padding: 40px;
+      border-left: 4px solid #D8C7B8;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      animation: fade-in 0.8s ease-out;
     }
 
     .intro-section p {
       font-size: 1.05em;
-      line-height: 1.8;
-      color: #333333;
+      color: #333;
     }
 
+    /* Features Grid */
     .features {
+      margin-top: 50px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
-      margin: 50px 0;
-      position: relative;
     }
 
     .feature-card {
       background: #FFFFFF;
-      padding: 40px;
-      border: 1px solid #E0E0E0;
-      border-radius: 0;
+      padding: 35px;
+      border: 1px solid #E6E2DD;
+      border-radius: 6px;
       transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
+      animation: fade-in 1s ease-out;
     }
 
     .feature-card::before {
@@ -185,18 +166,18 @@
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      height: 3px;
-      background: #000000;
+      height: 4px;
+      width: 100%;
+      background: #D8C7B8;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
     }
 
     .feature-card:hover {
-      border: 1px solid #000000;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border-color: #D8C7B8;
     }
 
     .feature-card:hover::before {
@@ -204,147 +185,41 @@
     }
 
     .feature-card h4 {
-      font-size: 1.5em;
+      font-size: 1.4em;
+      margin-bottom: 12px;
       font-weight: 700;
-      color: #000000;
-      margin-bottom: 15px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
     .feature-card p {
-      color: #555555;
-      font-size: 0.98em;
-      line-height: 1.8;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      padding: 16px 0 16px 30px;
-      position: relative;
-      color: #333333;
+      color: #555;
+      font-size: 0.95em;
       line-height: 1.7;
-      font-size: 1em;
     }
 
-    ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: #000000;
-      font-weight: bold;
-    }
-
-    footer { 
-      text-align: center; 
-      padding: 50px 20px; 
-      background: #F5F5F5;
-      color: #666666;
+    /* Footer */
+    footer {
+      background: #F0ECE8;
+      text-align: center;
+      padding: 40px 20px;
       margin-top: 80px;
       font-size: 0.9em;
-      letter-spacing: 0.5px;
-      border-top: 1px solid #E0E0E0;
-      position: relative;
+      color: #555;
+      border-top: 1px solid #E6E2DD;
     }
 
+    /* Mobile */
     @media (max-width: 768px) {
-      header {
-        padding: 40px 20px;
-      }
-
-      header h1 {
-        font-size: 2em;
-      }
-
-      header p {
-        font-size: 0.95em;
-      }
-
-      .subtitle-accent {
-        padding: 8px 16px;
-        font-size: 0.85em;
-      }
-
-      .intro-section {
-        padding: 30px;
-        margin-bottom: 30px;
-      }
-
-      h2 {
-        font-size: 1.8em;
-        margin: 30px 0 20px 0;
-      }
-
-      .feature-card {
-        padding: 25px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: 0;
-        justify-content: flex-start;
-      }
-
-      nav a {
-        padding: 14px 16px;
-        font-size: 0.85em;
-        white-space: nowrap;
-        flex-shrink: 0;
-      }
-
-      .container {
-        padding: 40px 15px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5em;
-      }
-
-      header p {
-        font-size: 0.85em;
-      }
-
-      h2 {
-        font-size: 1.4em;
-      }
-
-      nav a {
-        padding: 12px 12px;
-        font-size: 0.75em;
-      }
-
-      .intro-section {
-        padding: 20px;
-      }
-
-      .feature-card {
-        padding: 15px;
-      }
-
-      footer {
-        padding: 30px 15px;
-        font-size: 0.85em;
-      }
+      header h1 { font-size: 2.2em; }
+      nav { flex-wrap: wrap; }
+      .intro-section { padding: 30px; }
+      h2 { font-size: 1.8em; }
     }
   </style>
+</head>
 
-    header { 
-      background: linear-gradient(135deg, #7a5f4c 0%, #5d4a3d 50%, #3d2f24 100%);
-      color: white; 
-      padding: 80px 20px;
 <body>
 
 <header>
@@ -365,6 +240,7 @@
 </nav>
 
 <div class="container">
+
   <div class="intro-section">
     <h2>Welcome</h2>
     <p>
@@ -376,24 +252,29 @@
   </div>
 
   <h2>What We Offer</h2>
+
   <div class="features">
     <div class="feature-card">
       <h4>🏛️ National Competitions</h4>
       <p>Participate in our nationally-recognized mock trial competitions that challenge your legal knowledge, presentation skills, and courtroom expertise.</p>
     </div>
+
     <div class="feature-card">
       <h4>📚 Professional Training</h4>
       <p>Access comprehensive workshops and training programs led by experienced legal professionals and renowned educators in the field.</p>
     </div>
+
     <div class="feature-card">
       <h4>🤝 Strategic Partnerships</h4>
       <p>Connect with schools and youth organizations nationwide to expand your network and unlock new opportunities for growth.</p>
     </div>
+
     <div class="feature-card">
       <h4>⚖️ Real Courtroom Skills</h4>
       <p>Learn and practice authentic courtroom procedures, evidence examination, cross-examination, and legal argumentation techniques.</p>
     </div>
   </div>
+
 </div>
 
 <footer>
@@ -402,3 +283,4 @@
 
 </body>
 </html>
+
