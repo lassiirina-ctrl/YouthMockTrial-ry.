@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HYMT</title>
+  </head>
+  <body>
+    <h1>Welcome to HYMT</h1>
+    <p>National Youth Mock Trial Program</p>
+  </body>
+</html>
