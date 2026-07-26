@@ -461,16 +461,38 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5em;
+      header {
+        padding: 30px 15px;
+        clip-path: none;
       }
 
-      header {
-        padding: 50px 20px;
+      header h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1em;
+        letter-spacing: 1px;
+      }
+
+      .subtitle-accent {
+        padding: 6px 14px;
+        font-size: 0.9em;
+      }
+
+      .intro-section {
+        padding: 20px;
+        margin-bottom: 30px;
       }
 
       h2 {
-        font-size: 2em;
+        font-size: 1.6em;
+        margin: 30px 0 20px 0;
+      }
+
+      .feature-card {
+        padding: 25px;
       }
 
       .features {
@@ -479,10 +501,6 @@
 
       nav {
         flex-wrap: wrap;
-      }
-
-      .intro-section {
-        padding: 30px;
       }
     }
   </style>
