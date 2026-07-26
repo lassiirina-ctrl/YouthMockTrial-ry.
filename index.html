@@ -6,7 +6,7 @@
   <title>Youth Mock Trial ry</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,43 +16,58 @@
     }
 
     body {
-      font-family: "Source Sans Pro", sans-serif;
+      font-family: Inter, sans-serif;
       background: #FFFFFF;
       color: #1A1A1A;
       line-height: 1.7;
     }
 
-    /* HEADER */
-    header {
+    /* HERO SECTION */
+    .hero {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 40px 60px;
+      padding: 80px 60px;
+      background: #FAF8F5;
       border-bottom: 2px solid #E6E2DD;
-      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
     }
 
-    .logo {
-      width: 110px;
-      height: auto;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -120px;
+      width: 380px;
+      height: 380px;
+      background: #F0ECE8;
+      border-radius: 50%;
+      opacity: 0.6;
     }
 
-    .header-text {
-      text-align: right;
+    .hero-left {
+      max-width: 50%;
+      z-index: 2;
     }
 
-    .header-text h1 {
+    .hero-left img {
+      width: 140px;
+      margin-bottom: 25px;
+    }
+
+    .hero-left h1 {
       font-family: "Playfair Display", serif;
-      font-size: 2.8em;
+      font-size: 3.2em;
       font-weight: 700;
+      margin-bottom: 10px;
       letter-spacing: -0.5px;
-      margin-bottom: 6px;
     }
 
-    .header-text p {
-      font-size: 1.1em;
-      opacity: 0.8;
-      margin-bottom: 4px;
+    .hero-left p {
+      font-size: 1.2em;
+      opacity: 0.85;
+      margin-bottom: 8px;
     }
 
     .org-type {
@@ -64,7 +79,7 @@
 
     /* NAVIGATION */
     nav {
-      background: #FAFAFA;
+      background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
       display: flex;
       justify-content: center;
@@ -85,7 +100,7 @@
       background: #F0F0F0;
     }
 
-    /* HERO / INTRO */
+    /* CONTENT */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -109,32 +124,103 @@
       background: #000;
     }
 
+    /* INTRO SECTION */
     .intro-section {
       background: #FAFAFA;
       padding: 40px;
       border-left: 4px solid #000;
       border-radius: 4px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 60px;
     }
 
     .intro-section p {
       font-size: 1.05em;
       color: #333;
     }
+
+    /* FEATURES SECTION (your original one) */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      padding: 40px;
+      border: 1px solid #E0E0E0;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #000000;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border: 1px solid #000000;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-card h4 {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-card p {
+      color: #555555;
+      font-size: 0.98em;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #F5F5F5;
+      color: #666666;
+      margin-top: 80px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+      border-top: 1px solid #E0E0E0;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="Youth Mock Trial ry" class="logo">
-
-  <div class="header-text">
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-left">
+    <img src="logo.png" alt="Youth Mock Trial ry">
     <h1>Youth Mock Trial ry</h1>
     <p>Empowering the next generation of legal professionals</p>
     <div class="org-type">Non Profit Organization</div>
   </div>
-</header>
+</div>
 
 <nav>
   <a href="index.html">Home</a>
@@ -147,6 +233,7 @@
 </nav>
 
 <div class="container">
+
   <div class="intro-section">
     <h2>Welcome</h2>
     <p>
@@ -156,7 +243,36 @@
       of tomorrow.
     </p>
   </div>
+
+  <h2>What We Offer</h2>
+
+  <div class="features">
+    <div class="feature-card">
+      <h4>🏛️ National Competitions</h4>
+      <p>Participate in our nationally-recognized mock trial competitions that challenge your legal knowledge, presentation skills, and courtroom expertise.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>📚 Professional Training</h4>
+      <p>Access comprehensive workshops and training programs led by experienced legal professionals and renowned educators in the field.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>🤝 Strategic Partnerships</h4>
+      <p>Connect with schools and youth organizations nationwide to expand your network and unlock new opportunities for growth.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>⚖️ Real Courtroom Skills</h4>
+      <p>Learn and practice authentic courtroom procedures, evidence examination, cross-examination, and legal argumentation techniques.</p>
+    </div>
+  </div>
+
 </div>
+
+<footer>
+  <p>© 2026 Youth Mock Trial ry — All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
