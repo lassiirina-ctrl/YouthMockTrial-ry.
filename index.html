@@ -6,21 +6,9 @@
   <title>Youth Mock Trial ry</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* Animations */
-    @keyframes slide-in-up {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -28,93 +16,87 @@
     }
 
     body {
-      font-family: Inter, sans-serif;
-      background: #FAF8F5; /* warm cream */
+      font-family: "Source Sans Pro", sans-serif;
+      background: #FFFFFF;
       color: #1A1A1A;
       line-height: 1.7;
     }
 
-    /* Header */
+    /* HEADER */
     header {
-      background: #FAF8F5;
-      padding: 80px 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 60px;
       border-bottom: 2px solid #E6E2DD;
-      animation: fade-in 0.8s ease-out;
+      background: #FFFFFF;
     }
 
     .logo {
-      max-width: 90px;
-      margin-bottom: 20px;
-      animation: slide-in-up 0.8s ease-out;
+      width: 110px;
+      height: auto;
     }
 
-    header h1 {
+    .header-text {
+      text-align: right;
+    }
+
+    .header-text h1 {
       font-family: "Playfair Display", serif;
-      font-size: 3.2em;
+      font-size: 2.8em;
       font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
-      animation: slide-in-up 0.9s ease-out;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
     }
 
-    header p {
-      font-size: 1.15em;
-      opacity: 0.85;
-      animation: slide-in-up 1s ease-out;
+    .header-text p {
+      font-size: 1.1em;
+      opacity: 0.8;
+      margin-bottom: 4px;
     }
 
-    .subtitle-accent {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 24px;
-      background: #D8C7B8; /* warm taupe */
-      color: #000;
+    .org-type {
+      font-size: 0.95em;
+      opacity: 0.6;
       font-weight: 600;
-      border-radius: 4px;
-      animation: fade-in 1.2s ease-out;
+      letter-spacing: 0.5px;
     }
 
-    /* Navigation */
+    /* NAVIGATION */
     nav {
-      background: #FFFFFF;
+      background: #FAFAFA;
       border-bottom: 1px solid #E6E2DD;
       display: flex;
       justify-content: center;
-      gap: 10px;
-      padding: 12px 10px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      gap: 20px;
+      padding: 14px 10px;
     }
 
     nav a {
       text-decoration: none;
       color: #1A1A1A;
       font-weight: 600;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border-radius: 4px;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
     }
 
     nav a:hover {
-      background: #F0ECE8;
+      background: #F0F0F0;
     }
 
-    /* Container */
+    /* HERO / INTRO */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
     }
 
-    /* Section Titles */
     h2 {
       font-family: "Playfair Display", serif;
       font-size: 2.4em;
       margin-bottom: 20px;
       position: relative;
-      animation: slide-in-up 0.6s ease-out;
     }
 
     h2::before {
@@ -127,94 +109,17 @@
       background: #000;
     }
 
-    /* Intro Section */
     .intro-section {
-      background: #FFFFFF;
+      background: #FAFAFA;
       padding: 40px;
-      border-left: 4px solid #D8C7B8;
-      border-radius: 6px;
+      border-left: 4px solid #000;
+      border-radius: 4px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      animation: fade-in 0.8s ease-out;
     }
 
     .intro-section p {
       font-size: 1.05em;
       color: #333;
-    }
-
-    /* Features Grid */
-    .features {
-      margin-top: 50px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-card {
-      background: #FFFFFF;
-      padding: 35px;
-      border: 1px solid #E6E2DD;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      position: relative;
-      animation: fade-in 1s ease-out;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 4px;
-      width: 100%;
-      background: #D8C7B8;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border-color: #D8C7B8;
-    }
-
-    .feature-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .feature-card h4 {
-      font-size: 1.4em;
-      margin-bottom: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .feature-card p {
-      color: #555;
-      font-size: 0.95em;
-      line-height: 1.7;
-    }
-
-    /* Footer */
-    footer {
-      background: #F0ECE8;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 80px;
-      font-size: 0.9em;
-      color: #555;
-      border-top: 1px solid #E6E2DD;
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2em; }
-      nav { flex-wrap: wrap; }
-      .intro-section { padding: 30px; }
-      h2 { font-size: 1.8em; }
     }
   </style>
 </head>
@@ -223,9 +128,12 @@
 
 <header>
   <img src="logo.png" alt="Youth Mock Trial ry" class="logo">
-  <h1>Youth Mock Trial ry</h1>
-  <p>Empowering the next generation of legal professionals</p>
-  <div class="subtitle-accent">Non Profit Organization</div>
+
+  <div class="header-text">
+    <h1>Youth Mock Trial ry</h1>
+    <p>Empowering the next generation of legal professionals</p>
+    <div class="org-type">Non Profit Organization</div>
+  </div>
 </header>
 
 <nav>
@@ -239,7 +147,6 @@
 </nav>
 
 <div class="container">
-
   <div class="intro-section">
     <h2>Welcome</h2>
     <p>
@@ -249,38 +156,10 @@
       of tomorrow.
     </p>
   </div>
-
-  <h2>What We Offer</h2>
-
-  <div class="features">
-    <div class="feature-card">
-      <h4>🏛️ National Competitions</h4>
-      <p>Participate in our nationally-recognized mock trial competitions that challenge your legal knowledge, presentation skills, and courtroom expertise.</p>
-    </div>
-
-    <div class="feature-card">
-      <h4>📚 Professional Training</h4>
-      <p>Access comprehensive workshops and training programs led by experienced legal professionals and renowned educators in the field.</p>
-    </div>
-
-    <div class="feature-card">
-      <h4>🤝 Strategic Partnerships</h4>
-      <p>Connect with schools and youth organizations nationwide to expand your network and unlock new opportunities for growth.</p>
-    </div>
-
-    <div class="feature-card">
-      <h4>⚖️ Real Courtroom Skills</h4>
-      <p>Learn and practice authentic courtroom procedures, evidence examination, cross-examination, and legal argumentation techniques.</p>
-    </div>
-  </div>
-
 </div>
-
-<footer>
-  <p>© 2026 Youth Mock Trial ry — All Rights Reserved</p>
-</footer>
 
 </body>
 </html>
+
 
 
