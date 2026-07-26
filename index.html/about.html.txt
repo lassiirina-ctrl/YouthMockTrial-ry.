@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About — Youth Mock Trial ry</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+    header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+    nav { background: #333; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; }
+    footer { text-align: center; padding: 20px; background: #1a1a1a; color: white; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>About Youth Mock Trial ry</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="competition.html">Competition</a>
+  <a href="sponsors.html">Sponsors</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h2>Our Mission</h2>
+  <p>
+    Youth Mock Trial ry was founded to give young people a platform to explore the legal system,
+    develop critical thinking, and gain confidence in public speaking.
+  </p>
+
+  <h2>Our Values</h2>
+  <ul>
+    <li>Accessibility</li>
+    <li>Education</li>
+    <li>Integrity</li>
+    <li>Youth empowerment</li>
+  </ul>
+</div>
+
+<footer>
+  © 2026 Youth Mock Trial ry
+</footer>
+
+</body>
+</html>
