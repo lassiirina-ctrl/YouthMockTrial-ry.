@@ -17,23 +17,13 @@
       overflow-x: hidden;
     }
 
-/* FIX BLUE LINKS */
-a {
-  color: #444 !important;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #8A6A4A !important;
-}
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Inter, sans-serif;
-      background: #FFFFFF;
-      color: #1A1A1A;
-      line-height: 1.7;
-      overflow-x: hidden;
+    /* REMOVE BLUE LINKS EVERYWHERE */
+    a {
+      color: #444 !important;
+      text-decoration: none !important;
+    }
+    a:hover {
+      color: #8A6A4A !important;
     }
 
     /* DESKTOP NAVIGATION */
@@ -52,7 +42,6 @@ a:hover {
     nav a, nav button {
       font-size: 1em;
       font-weight: 600;
-      text-decoration: none;
       color: #1A1A1A;
       padding: 10px 14px;
       border-radius: 8px;
@@ -88,7 +77,6 @@ a:hover {
       display: block;
       padding: 10px 18px;
       font-size: 0.95em;
-      text-decoration: none;
       color: #1A1A1A;
     }
 
@@ -155,11 +143,10 @@ a:hover {
         font-size: 1em;
         font-weight: 600;
         color: #1A1A1A;
-        text-decoration: none;
       }
     }
 
-      /* HERO */
+    /* HERO */
     .hero {
       position: relative;
       height: 520px;
@@ -226,8 +213,8 @@ a:hover {
       color: #5A4632;
     }
 
-    /* PROGRAMS & INITIATIVES — FIXED TO MATCH YOUR SCREENSHOT */
-    .programs-section h2 {
+    /* WHAT WE OFFER — EMOJI LIST STYLE */
+    .offer-section h2 {
       font-family: "Playfair Display", serif;
       font-size: 2.4em;
       margin-bottom: 20px;
@@ -275,7 +262,6 @@ a:hover {
       border-radius: 999px;
       background: #8A6A4A;
       color: #FFFFFF;
-      text-decoration: none;
       font-size: 0.95em;
       font-weight: 600;
     }
@@ -315,8 +301,7 @@ a:hover {
     }
 
     .news-card a {
-      color: #8A6A4A;
-      text-decoration: none;
+      color: #8A6A4A !important;
       font-weight: 600;
     }
 
@@ -354,13 +339,12 @@ a:hover {
     .footer-section a {
       display: block;
       font-size: 0.95em;
-      color: #444; /* FIXED: no blue */
-      text-decoration: none;
+      color: #444 !important;
       margin-bottom: 6px;
     }
 
     .footer-section a:hover {
-      color: #8A6A4A;
+      color: #8A6A4A !important;
     }
 
     .footer-bottom {
@@ -435,33 +419,33 @@ a:hover {
   </div>
 
   <!-- WHAT WE OFFER (emoji list style) -->
-<div class="offer-section">
-  <h2>What We Offer</h2>
+  <div class="offer-section">
+    <h2>What We Offer</h2>
 
-  <div class="programs-list">
+    <div class="programs-list">
 
-    <div class="program-item">
-      <h4>⚖️ Mock Trial Education</h4>
-      <p>We provide structured legal education for youth, focusing on advocacy, courtroom skills, and justice literacy.</p>
+      <div class="program-item">
+        <h4>⚖️ Mock Trial Education</h4>
+        <p>We provide structured legal education for youth, focusing on advocacy, courtroom skills, and justice literacy.</p>
+      </div>
+
+      <div class="program-item">
+        <h4>📚 Workshops & Training</h4>
+        <p>Our workshops are led by legal professionals, offering hands‑on experience in evidence, argumentation, and procedure.</p>
+      </div>
+
+      <div class="program-item">
+        <h4>🏛️ National Competitions</h4>
+        <p>We organize Finland’s leading youth mock trial competitions, including the Helsinki Youth Mock Trial.</p>
+      </div>
+
+      <div class="program-item">
+        <h4>🤝 School Partnerships</h4>
+        <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      </div>
+
     </div>
-
-    <div class="program-item">
-      <h4>📚 Workshops & Training</h4>
-      <p>Our workshops are led by legal professionals, offering hands‑on experience in evidence, argumentation, and procedure.</p>
-    </div>
-
-    <div class="program-item">
-      <h4>🏛️ National Competitions</h4>
-      <p>We organize Finland’s leading youth mock trial competitions, including the Helsinki Youth Mock Trial.</p>
-    </div>
-
-    <div class="program-item">
-      <h4>🤝 School Partnerships</h4>
-      <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
-    </div>
-
   </div>
-</div>
 
   <!-- CTA STRIP -->
   <div class="cta-strip">
@@ -469,7 +453,7 @@ a:hover {
     <a href="join.html" class="cta-button">Join Us</a>
   </div>
 
-  <!-- NEWS WRAPPER -->
+  <!-- NEWS -->
   <div class="news-wrapper">
     <div class="news-section">
       <h2>Latest News</h2>
@@ -520,18 +504,18 @@ a:hover {
 
     <div class="footer-section">
       <h4>Follow Us</h4>
-      <div class="social-links">
-        <a href="#" class="social-icon">Instagram</a>
-        <a href="#" class="social-icon">TikTok</a>
-        <a href="#" class="social-icon">LinkedIn</a>
-      </div>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">LinkedIn</a>
     </div>
 
     <div class="footer-section">
       <h4>Quick Links</h4>
-      <a href="hymt.html">HYMT</a><br>
-      <a href="news.html">News</a><br>
+      <a href="hymt.html">HYMT</a>
+      <a href="news.html">News</a>
       <a href="join.html">Join Us</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </div>
 
   </div>
@@ -540,6 +524,12 @@ a:hover {
     © 2026 Youth Mock Trial ry — All Rights Reserved
   </div>
 </footer>
+
+<script>
+  document.querySelector('.mobile-menu').addEventListener('click', () => {
+    document.querySelector('.mobile-menu').classList.remove('open');
+  });
+</script>
 
 </body>
 </html>
