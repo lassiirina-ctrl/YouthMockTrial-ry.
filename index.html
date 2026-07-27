@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youth Mock Trial ry</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -48,7 +47,6 @@
       height: 420px;
       top: -120px;
       left: -80px;
-      animation-delay: 0s;
     }
 
     .blob.tan {
@@ -78,8 +76,9 @@
       font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: -0.7px;
-      color: #5A4632; /* deep warm brown */
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+      color: #2E1F14; /* darker warm brown */
+      background: transparent; /* fully transparent */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.25); /* makes it pop */
     }
 
     .hero-left p {
@@ -96,31 +95,23 @@
       margin-top: 8px;
     }
 
-    /* RIGHT SIDE — TAN CIRCLE + LOGO */
+    /* RIGHT SIDE — LOGO ONLY (transparent) */
     .hero-right {
       position: relative;
       z-index: 2;
     }
 
-    .logo-circle {
-      width: 360px;
-      height: 360px;
-      background: #D8C0A8; /* light tan */
-      border-radius: 50%;
-      position: absolute;
-      top: -40px; /* slight upward offset */
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    .logo-img {
+      width: 240px; /* medium size */
+      height: auto;
+      display: block;
+      background: transparent;
+      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15)); /* soft shadow */
     }
 
-    .hero-right img {
-      width: 240px; /* medium logo size */
-      height: auto;
-      position: relative;
-      margin-top: 60px; /* centers inside circle with padding */
-      display: block;
-      filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.15));
+    /* REMOVE ANY OLD CIRCLE */
+    .logo-circle {
+      display: none !important;
     }
 
     /* CLEAN CURVED DIVIDER */
@@ -156,138 +147,6 @@
       background: #F0F0F0;
       transform: translateY(-2px);
     }
-
-    /* CONTENT */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.6em;
-      margin-bottom: 20px;
-      position: relative;
-      color: #5A4632;
-    }
-
-    h2::before {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 70px;
-      height: 4px;
-      background: #8A6A4A;
-      border-radius: 4px;
-    }
-
-    /* INTRO SECTION */
-    .intro-section {
-      background: #FAFAFA;
-      padding: 40px;
-      border-left: 6px solid #D8C0A8;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 60px;
-    }
-
-    .intro-section p {
-      font-size: 1.05em;
-      color: #333;
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .feature-card {
-      background: #FFFFFF;
-      padding: 40px;
-      border: 1px solid #E0E0E0;
-      border-radius: 16px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: #D8C0A8;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-      border-radius: 16px 16px 0 0;
-    }
-
-    .feature-card:hover {
-      border: 1px solid #8A6A4A;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      transform: translateY(-4px);
-    }
-
-    .feature-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .feature-card h4 {
-      font-size: 1.5em;
-      font-weight: 700;
-      color: #5A4632;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      animation: bounce 1.5s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-
-    .feature-card p {
-      color: #555555;
-      font-size: 0.98em;
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      background: #F5F5F5;
-      color: #666666;
-      margin-top: 80px;
-      font-size: 0.9em;
-      letter-spacing: 0.5px;
-      border-top: 1px solid #E0E0E0;
-      position: relative;
-    }
-
-    footer::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 120px;
-      background: #D8C0A8;
-      border-radius: 50%;
-      opacity: 0.3;
-      filter: blur(4px);
-    }
   </style>
 </head>
 
@@ -305,8 +164,7 @@
   </div>
 
   <div class="hero-right">
-    <div class="logo-circle"></div>
-    <img src="logo.png" alt="Youth Mock Trial ry">
+    <img class="logo-img" src="logo.png" alt="Youth Mock Trial ry">
   </div>
 </div>
 
@@ -322,47 +180,9 @@
   <a href="events.html">Other Events</a>
 </nav>
 
-<div class="container">
-
-  <div class="intro-section">
-    <h2>Welcome</h2>
-    <p>
-      Youth Mock Trial ry is a national organization dedicated to providing young people with
-      hands-on experience in law, advocacy, and courtroom procedure. Our mission is to make
-      legal education accessible, engaging, and empowering. Join us as we shape the legal minds
-      of tomorrow.
-    </p>
-  </div>
-
-  <h2>What We Offer</h2>
-
-  <div class="features">
-    <div class="feature-card">
-      <h4>🏛️ National Competitions</h4>
-      <p>Participate in our nationally-recognized mock trial competitions that challenge your legal knowledge, presentation skills, and courtroom expertise.</p>
-    </div>
-
-    <div class="feature-card">
-      <h4>📚 Professional Training</h4>
-      <p>Access comprehensive workshops and training programs led by experienced legal professionals and renowned educators in the field.</p>
-    </div>
-
-    <div class="feature-card">
-      <h4>🤝 Strategic Partnerships</h4>
-      <p>Connect with schools and youth organizations nationwide to expand your network and unlock new opportunities for growth.</p>
-    </div>
-
-    <div class="feature-card">
-      <h4>⚖️ Real Courtroom Skills</h4>
-      <p>Learn and practice authentic courtroom procedures, evidence examination, cross-examination, and legal argumentation techniques.</p>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <p>© 2026 Youth Mock Trial ry — All Rights Reserved</p>
-</footer>
-
 </body>
 </html>
+
+
+
+
