@@ -17,108 +17,136 @@
       overflow-x: hidden;
     }
 
-    /* TOP BAR */
-    .top-bar {
+    /* DESKTOP NAVIGATION */
+    nav {
       background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
-      padding: 12px 20px;
+      padding: 16px 20px;
       display: flex;
+      gap: 25px;
       align-items: center;
-      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: #1A1A1A;
-      border-radius: 2px;
-    }
-
-    .top-right-label {
-      font-size: 0.85em;
-      color: #777777;
-      font-weight: 500;
-    }
-
-    /* SLIDE-IN MENU */
-    .side-menu-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
-      display: none;
-      z-index: 999;
-    }
-
-    .side-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100vh;
-      background: #FFFFFF;
-      box-shadow: 2px 0 12px rgba(0,0,0,0.15);
-      padding: 20px;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-    }
-
-    .side-menu.open {
-      transform: translateX(0);
-    }
-
-    .side-menu h3 {
-      font-size: 1.1em;
-      margin-bottom: 16px;
-      color: #5A4632;
+    nav a, nav button {
+      font-size: 1em;
       font-weight: 600;
-    }
-
-    .side-menu a {
-      display: block;
       text-decoration: none;
       color: #1A1A1A;
-      font-weight: 500;
-      padding: 8px 0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover, nav button:hover {
+      background: #F0F0F0;
+      transform: translateY(-2px);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      background: #FFFFFF;
+      border: 1px solid #E6E2DD;
+      border-radius: 8px;
+      padding: 10px 0;
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 18px;
       font-size: 0.95em;
+      text-decoration: none;
+      color: #1A1A1A;
     }
 
-    .side-menu a:hover {
-      color: #8A6A4A;
+    .dropdown-menu a:hover {
+      background: #F0F0F0;
     }
 
-    .side-subtitle {
-      margin-top: 10px;
-      font-size: 0.9em;
-      color: #777;
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
 
-    .side-submenu {
-      margin-left: 12px;
-      margin-top: 4px;
-      margin-bottom: 8px;
-    }
+    /* MOBILE NAVIGATION */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
 
-    .side-submenu a {
-      font-size: 0.9em;
-      font-weight: 400;
+      .mobile-nav {
+        background: #FFFFFF;
+        border-bottom: 1px solid #E6E2DD;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: #1A1A1A;
+        border-radius: 2px;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: #FFFFFF;
+        box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+        padding: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 2000;
+      }
+
+      .mobile-menu.open {
+        transform: translateX(0);
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1em;
+        font-weight: 600;
+        color: #1A1A1A;
+        text-decoration: none;
+      }
     }
 
     /* HERO */
     .hero {
       position: relative;
       height: 520px;
-      background: url('photo1.jpg') top center / cover no-repeat;
+      background: url('photo1.jpg') center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -149,7 +177,6 @@
     .hero-content p {
       font-size: 1.2em;
       opacity: 0.95;
-      margin-bottom: 8px;
     }
 
     .hero-tagline {
@@ -158,69 +185,56 @@
       margin-top: 6px;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        height: 480px;
-        background-position: top center;
-        background-size: cover;
-      }
-      .hero-content {
-        padding: 0 20px;
-        width: 100%;
-      }
-    }
-
-    /* MAIN CONTAINER */
+    /* MAIN CONTENT */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
     }
 
-    h2.section-title {
+    /* MISSION */
+    .intro-section {
+      background: #FAFAFA;
+      padding: 40px;
+      border-left: 6px solid #D8C0A8;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 60px;
+    }
+
+    .intro-section h2 {
       font-family: "Playfair Display", serif;
       font-size: 2.4em;
       margin-bottom: 20px;
       color: #5A4632;
-      position: relative;
     }
 
-    h2.section-title::before {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 70px;
-      height: 4px;
-      background: #8A6A4A;
-      border-radius: 4px;
-    }
-
-    /* WHAT WE OFFER / JOIN US / NEWS GRID */
-    .grid-3 {
+    /* FUN BEIGE BOXES WITH EMOJIS */
+    .programs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 30px;
     }
 
-    .info-card {
+    .program-card {
       background: #F8F4EF;
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 24px;
       border: 1px solid #E0D6C8;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .info-card h3 {
+    .program-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .program-card h4 {
       font-size: 1.2em;
       color: #5A4632;
       margin-bottom: 10px;
-    }
-
-    .info-card p {
-      font-size: 0.95em;
-      color: #444;
     }
 
     /* BIG JOIN US BOX */
@@ -229,9 +243,9 @@
       border-radius: 14px;
       padding: 32px;
       border: 1px solid #E0D6C8;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.07);
       margin-top: 50px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
 
     .join-big h3 {
@@ -248,7 +262,7 @@
 
     .join-big a.button {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 999px;
       background: #8A6A4A;
       color: #FFFFFF;
@@ -257,11 +271,29 @@
       font-weight: 600;
     }
 
-    .join-big a.button:hover {
-      background: #6F5236;
+    /* LATEST NEWS WITH EMOJIS */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
     }
 
-    /* FOOTER */
+    .news-card {
+      background: #F8F4EF;
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid #E0D6C8;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    .news-card h4 {
+      font-size: 1.2em;
+      color: #5A4632;
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER WITH SOCIALS */
     footer {
       background: #F5F5F5;
       padding: 50px 20px;
@@ -286,62 +318,55 @@
       color: #5A4632;
     }
 
-    .footer-section p,
-    .footer-section a {
-      font-size: 0.95em;
-      color: #444;
+    .socials a {
+      display: block;
+      margin-bottom: 8px;
       text-decoration: none;
+      color: #444;
+      font-size: 0.95em;
     }
 
-    .footer-section a:hover {
+    .socials a:hover {
       color: #8A6A4A;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.85em;
-      opacity: 0.7;
-    }
-
-    @media (max-width: 768px) {
-      .footer-content {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="hamburger" onclick="openMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+<!-- DESKTOP NAV -->
+<nav>
+  <a href="index.html">Home</a>
+
+  <div class="dropdown">
+    <button>About Us</button>
+    <div class="dropdown-menu">
+      <a href="about.html">Overview</a>
+      <a href="mission.html">Mission</a>
+      <a href="leadership.html">Leadership</a>
+    </div>
   </div>
-  <div class="top-right-label">
-    non-profit organization
+
+  <a href="hymt.html">Helsinki Youth Mock Trial</a>
+  <a href="programs.html">Programs</a>
+  <a href="news.html">News</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')">
+    <span></span><span></span><span></span>
   </div>
 </div>
 
-<!-- SLIDE-IN MENU -->
-<div class="side-menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
-
-<div class="side-menu" id="sideMenu">
-  <h3>Navigation</h3>
+<div class="mobile-menu">
   <a href="index.html">Home</a>
-
-  <div class="side-subtitle">About Us</div>
-  <div class="side-submenu">
-    <a href="about.html">Overview</a>
-    <a href="mission.html">Mission</a>
-    <a href="leadership.html">Leadership</a>
-  </div>
-
-  <a href="hymt.html">HYMT</a>
-  <a href="join.html">Join Us</a>
+  <a href="about.html">About Us</a>
+  <a href="mission.html">Mission</a>
+  <a href="leadership.html">Leadership</a>
+  <a href="hymt.html">Helsinki Youth Mock Trial</a>
+  <a href="programs.html">Programs</a>
   <a href="news.html">News</a>
   <a href="contact.html">Contact</a>
 </div>
@@ -356,30 +381,38 @@
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- CONTENT -->
 <div class="container">
 
-  <!-- WHAT WE OFFER -->
-  <section>
-    <h2 class="section-title">What We Offer</h2>
-    <div class="grid-3">
-      <div class="info-card">
-        <h3>Mock Trial Competitions</h3>
-        <p>Structured courtroom simulations where students take on roles as lawyers, witnesses, and jurors.</p>
-      </div>
-      <div class="info-card">
-        <h3>Workshops & Training</h3>
-        <p>Skill-building sessions in advocacy, public speaking, and legal reasoning for youth across Finland.</p>
-      </div>
-      <div class="info-card">
-        <h3>School Partnerships</h3>
-        <p>Collaborations with schools to integrate mock trial and legal education into classroom activities.</p>
-      </div>
-    </div>
-  </section>
+  <div class="intro-section">
+    <h2>Our Mission</h2>
+    <p>
+      Youth Mock Trial ry is committed to advancing legal education for young people across Finland.
+      Through structured programs, courtroom simulations, and national competitions, we provide
+      students with the tools to understand justice, advocacy, and civic responsibility.
+    </p>
+  </div>
 
-  <!-- BIG JOIN US BOX -->
-  <section class="join-big">
+  <h2>Programs & Initiatives</h2>
+
+  <div class="programs">
+    <div class="program-card">
+      <h4>⚖️ National Mock Trial Competition</h4>
+      <p>Our flagship program brings together students from across the country to compete in realistic courtroom simulations.</p>
+    </div>
+
+    <div class="program-card">
+      <h4>📚 Legal Education Workshops</h4>
+      <p>We partner with legal professionals to deliver hands-on workshops in advocacy, evidence, and courtroom procedure.</p>
+    </div>
+
+    <div class="program-card">
+      <h4>🏫 School Partnerships</h4>
+      <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+    </div>
+  </div>
+
+  <div class="join-big">
     <h3>Want to get involved in Youth Mock Trial ry?</h3>
     <p>
       Whether you are a student, teacher, legal professional, or community member, there are many ways to
@@ -387,74 +420,43 @@
       the next generation of advocates.
     </p>
     <a href="join.html" class="button">Learn more about joining us</a>
-  </section>
+  </div>
 
-  <!-- JOIN US SMALL BOXES -->
-  <section>
-    <h2 class="section-title">Join Us</h2>
-    <div class="grid-3">
-      <div class="info-card">
-        <h3>Student Participant</h3>
-        <p>Take part in competitions and workshops to develop your advocacy and critical thinking skills.</p>
-      </div>
-      <div class="info-card">
-        <h3>Volunteer Judge</h3>
-        <p>Support youth by serving as a judge or mentor during mock trial events.</p>
-      </div>
-      <div class="info-card">
-        <h3>School Partner</h3>
-        <p>Bring mock trial programs to your school and collaborate on legal education initiatives.</p>
-      </div>
-    </div>
-    <div class="grid-3" style="margin-top:24px;">
-      <div class="info-card">
-        <h3>Community Volunteer</h3>
-        <p>Help organize events, support logistics, and promote legal education in your community.</p>
-      </div>
-      <div class="info-card">
-        <h3>Legal Professional</h3>
-        <p>Share your expertise by mentoring students and contributing to program development.</p>
-      </div>
-      <div class="info-card">
-        <h3>Supporter & Donor</h3>
-        <p>Contribute resources to help us expand access to youth legal education across Finland.</p>
-      </div>
-    </div>
-  </section>
+  <h2>Latest News</h2>
 
-  <!-- LATEST NEWS -->
-  <section style="margin-top:60px;">
-    <h2 class="section-title">Latest News</h2>
-    <div class="grid-3">
-      <div class="info-card">
-        <h3>HYMT 2026 Registration Opens</h3>
-        <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and teams.</p>
-      </div>
-      <div class="info-card">
-        <h3>New Partnership Announced</h3>
-        <p>We are expanding our collaboration with legal organizations to reach more youth across Finland.</p>
-      </div>
-      <div class="info-card">
-        <h3>Workshop Series Launch</h3>
-        <p>A new workshop series will offer hands-on training in advocacy, evidence, and courtroom procedure.</p>
-      </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <h4>📰 HYMT 2026 Registration Opens</h4>
+      <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and teams.</p>
     </div>
-  </section>
+
+    <div class="news-card">
+      <h4>🤝 New Partnership Announced</h4>
+      <p>We are expanding our collaboration with legal organizations to reach more youth across Finland.</p>
+    </div>
+
+    <div class="news-card">
+      <h4>🎓 Workshop Series Launch</h4>
+      <p>A new workshop series will offer hands-on training in advocacy, evidence, and courtroom procedure.</p>
+    </div>
+  </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
+
     <div class="footer-section">
       <h4>Youth Mock Trial ry</h4>
       <p>Advancing legal education for youth across Finland.</p>
     </div>
 
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <p>Email: info@youthmocktrial.fi</p>
-      <p>Location: Helsinki, Finland</p>
+    <div class="footer-section socials">
+      <h4>Follow Us</h4>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">LinkedIn</a>
     </div>
 
     <div class="footer-section">
@@ -465,6 +467,7 @@
       <a href="about.html">About Us</a><br>
       <a href="contact.html">Contact</a>
     </div>
+
   </div>
 
   <div class="footer-bottom">
@@ -473,15 +476,9 @@
 </footer>
 
 <script>
-  function openMenu() {
-    document.getElementById('sideMenu').classList.add('open');
-    document.getElementById('menuOverlay').style.display = 'block';
-  }
-
-  function closeMenu() {
-    document.getElementById('sideMenu').classList.remove('open');
-    document.getElementById('menuOverlay').style.display = 'none';
-  }
+  document.querySelector('.mobile-menu').addEventListener('click', () => {
+    document.querySelector('.mobile-menu').classList.remove('open');
+  });
 </script>
 
 </body>
