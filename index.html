@@ -27,23 +27,44 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 80px 60px;
-      background: #FAF8F5;
+      padding: 100px 60px;
+      background: linear-gradient(135deg, #FDFCFB 0%, #FAF8F5 100%);
       border-bottom: 2px solid #E6E2DD;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
+    /* Floating playful blobs */
+    .blob {
       position: absolute;
-      top: -80px;
-      right: -120px;
+      border-radius: 50%;
+      opacity: 0.45;
+      filter: blur(2px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .blob.teal {
+      background: #D7F2F0;
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      left: -80px;
+      animation-delay: 0s;
+    }
+
+    .blob.coral {
+      background: #F9D9D0;
       width: 380px;
       height: 380px;
-      background: #F0ECE8;
-      border-radius: 50%;
-      opacity: 0.6;
+      bottom: -140px;
+      right: -100px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(25px); }
+      100% { transform: translateY(0px); }
     }
 
     /* LEFT SIDE (TEXT) */
@@ -54,25 +75,27 @@
 
     .hero-left h1 {
       font-family: "Playfair Display", serif;
-      font-size: 3.6em; /* bigger + stronger */
+      font-size: 4em;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       letter-spacing: -0.7px;
-      color: #000;
+      background: linear-gradient(90deg, #000, #444);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .hero-left p {
-      font-size: 1.25em;
+      font-size: 1.3em;
       opacity: 0.85;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .org-type {
       font-size: 1em;
-      opacity: 0.55;
+      opacity: 0.6;
       font-weight: 600;
       letter-spacing: 0.5px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     /* RIGHT SIDE (LOGO) */
@@ -81,8 +104,25 @@
     }
 
     .hero-right img {
-      width: 160px;
+      width: 190px;
       height: auto;
+      display: block;
+      filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.15));
+      animation: popIn 1.2s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* WAVY DIVIDER */
+    .wave {
+      width: 100%;
+      height: 80px;
+      background: url('data:image/svg+xml;utf8,<svg width="100%" height="80" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q50 60 100 20 T200 20 T300 20 T400 20 T500 20 T600 20 T700 20 T800 20 T900 20 T1000 20 V80 H0 Z" fill="%23FAF8F5"/></svg>');
+      background-size: cover;
+      margin-top: -20px;
     }
 
     /* NAVIGATION */
@@ -92,20 +132,22 @@
       display: flex;
       justify-content: center;
       gap: 20px;
-      padding: 14px 10px;
+      padding: 16px 10px;
+      border-radius: 0 0 20px 20px;
     }
 
     nav a {
       text-decoration: none;
       color: #1A1A1A;
       font-weight: 600;
-      padding: 10px 16px;
-      border-radius: 4px;
+      padding: 10px 18px;
+      border-radius: 10px;
       transition: 0.3s ease;
     }
 
     nav a:hover {
       background: #F0F0F0;
+      transform: translateY(-2px);
     }
 
     /* CONTENT */
@@ -117,7 +159,7 @@
 
     h2 {
       font-family: "Playfair Display", serif;
-      font-size: 2.4em;
+      font-size: 2.6em;
       margin-bottom: 20px;
       position: relative;
     }
@@ -127,17 +169,18 @@
       position: absolute;
       bottom: -8px;
       left: 0;
-      width: 60px;
-      height: 3px;
-      background: #000;
+      width: 70px;
+      height: 4px;
+      background: #D7F2F0;
+      border-radius: 4px;
     }
 
     /* INTRO SECTION */
     .intro-section {
       background: #FAFAFA;
       padding: 40px;
-      border-left: 4px solid #000;
-      border-radius: 4px;
+      border-left: 6px solid #D7F2F0;
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 60px;
     }
@@ -147,7 +190,7 @@
       color: #333;
     }
 
-    /* FEATURES SECTION (your original one) */
+    /* FEATURES SECTION */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -159,27 +202,29 @@
       background: #FFFFFF;
       padding: 40px;
       border: 1px solid #E0E0E0;
-      border-radius: 6px;
+      border-radius: 16px;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
 
+    /* playful top accent */
     .feature-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: #000000;
+      height: 6px;
+      background: #F9D9D0;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
+      border-radius: 16px 16px 0 0;
     }
 
     .feature-card:hover {
-      border: 1px solid #000000;
+      border: 1px solid #D7F2F0;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       transform: translateY(-4px);
     }
@@ -196,6 +241,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
     .feature-card p {
@@ -214,6 +265,21 @@
       font-size: 0.9em;
       letter-spacing: 0.5px;
       border-top: 1px solid #E0E0E0;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      background: #D7F2F0;
+      border-radius: 50%;
+      opacity: 0.3;
+      filter: blur(4px);
     }
   </style>
 </head>
@@ -222,6 +288,9 @@
 
 <!-- HERO SECTION -->
 <div class="hero">
+  <div class="blob teal"></div>
+  <div class="blob coral"></div>
+
   <div class="hero-left">
     <h1>Youth Mock Trial ry</h1>
     <p>Empowering the next generation of legal professionals</p>
@@ -232,6 +301,8 @@
     <img src="logo.png" alt="Youth Mock Trial ry">
   </div>
 </div>
+
+<div class="wave"></div>
 
 <nav>
   <a href="index.html">Home</a>
@@ -287,7 +358,6 @@
 
 </body>
 </html>
-
 
 
 
