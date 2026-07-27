@@ -42,7 +42,7 @@
     }
 
     .blob.brown {
-      background: #8A6A4A; /* warm medium brown */
+      background: #8A6A4A;
       width: 420px;
       height: 420px;
       top: -120px;
@@ -50,7 +50,7 @@
     }
 
     .blob.tan {
-      background: #D8C0A8; /* warm tan */
+      background: #D8C0A8;
       width: 380px;
       height: 380px;
       bottom: -140px;
@@ -77,8 +77,8 @@
       margin-bottom: 20px;
       letter-spacing: -0.7px;
       color: #2E1F14; /* darker warm brown */
-      background: transparent; /* fully transparent */
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.25); /* makes it pop */
+      background: transparent;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
     }
 
     .hero-left p {
@@ -95,23 +95,23 @@
       margin-top: 8px;
     }
 
-    /* RIGHT SIDE — LOGO ONLY (transparent) */
+    /* RIGHT SIDE — LOGO WITH MICRO-GLOW FIX */
     .hero-right {
       position: relative;
       z-index: 2;
     }
 
     .logo-img {
-      width: 240px; /* medium size */
+      width: 240px;
       height: auto;
       display: block;
       background: transparent;
-      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15)); /* soft shadow */
-    }
 
-    /* REMOVE ANY OLD CIRCLE */
-    .logo-circle {
-      display: none !important;
+      /* Invisible glow that fixes transparency halo */
+      filter:
+        drop-shadow(0 0 0.5px rgba(255,255,255,0.9))
+        drop-shadow(0 0 1px rgba(255,255,255,0.7))
+        drop-shadow(0 0 2px rgba(0,0,0,0.15));
     }
 
     /* CLEAN CURVED DIVIDER */
@@ -147,6 +147,129 @@
       background: #F0F0F0;
       transform: translateY(-2px);
     }
+
+    /* CONTENT CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.6em;
+      margin-bottom: 20px;
+      position: relative;
+      color: #5A4632;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #8A6A4A;
+      border-radius: 4px;
+    }
+
+    /* INTRO SECTION */
+    .intro-section {
+      background: #FAFAFA;
+      padding: 40px;
+      border-left: 6px solid #D8C0A8;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 60px;
+    }
+
+    .intro-section p {
+      font-size: 1.05em;
+      color: #333;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      padding: 40px;
+      border: 1px solid #E0E0E0;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: #D8C0A8;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .feature-card:hover {
+      border: 1px solid #8A6A4A;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-card h4 {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #5A4632;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: #555555;
+      font-size: 0.98em;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #F5F5F5;
+      color: #666666;
+      margin-top: 80px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+      border-top: 1px solid #E0E0E0;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      background: #D8C0A8;
+      border-radius: 50%;
+      opacity: 0.3;
+      filter: blur(4px);
+    }
   </style>
 </head>
 
@@ -180,9 +303,50 @@
   <a href="events.html">Other Events</a>
 </nav>
 
+<div class="container">
+
+  <div class="intro-section">
+    <h2>Welcome</h2>
+    <p>
+      Youth Mock Trial ry is a national organization dedicated to providing young people with
+      hands-on experience in law, advocacy, and courtroom procedure. Our mission is to make
+      legal education accessible, engaging, and empowering. Join us as we shape the legal minds
+      of tomorrow.
+    </p>
+  </div>
+
+  <h2>What We Offer</h2>
+
+  <div class="features">
+    <div class="feature-card">
+      <h4>🏛️ National Competitions</h4>
+      <p>Participate in our nationally-recognized mock trial competitions that challenge your legal knowledge, presentation skills, and courtroom expertise.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>📚 Professional Training</h4>
+      <p>Access comprehensive workshops and training programs led by experienced legal professionals and renowned educators in the field.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>🤝 Strategic Partnerships</h4>
+      <p>Connect with schools and youth organizations nationwide to expand your network and unlock new opportunities for growth.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>⚖️ Real Courtroom Skills</h4>
+      <p>Learn and practice authentic courtroom procedures, evidence examination, cross-examination, and legal argumentation techniques.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Youth Mock Trial ry — All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
-
 
 
 
