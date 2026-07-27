@@ -46,35 +46,43 @@
       opacity: 0.6;
     }
 
+    /* LEFT SIDE (TEXT) */
     .hero-left {
-      max-width: 50%;
+      max-width: 55%;
       z-index: 2;
-    }
-
-    .hero-left img {
-      width: 140px;
-      margin-bottom: 25px;
     }
 
     .hero-left h1 {
       font-family: "Playfair Display", serif;
-      font-size: 3.2em;
+      font-size: 3.6em; /* bigger + stronger */
       font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
+      margin-bottom: 15px;
+      letter-spacing: -0.7px;
+      color: #000;
     }
 
     .hero-left p {
-      font-size: 1.2em;
+      font-size: 1.25em;
       opacity: 0.85;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .org-type {
-      font-size: 0.95em;
-      opacity: 0.6;
+      font-size: 1em;
+      opacity: 0.55;
       font-weight: 600;
       letter-spacing: 0.5px;
+      margin-top: 6px;
+    }
+
+    /* RIGHT SIDE (LOGO) */
+    .hero-right {
+      z-index: 2;
+    }
+
+    .hero-right img {
+      width: 160px;
+      height: auto;
     }
 
     /* NAVIGATION */
@@ -215,10 +223,13 @@
 <!-- HERO SECTION -->
 <div class="hero">
   <div class="hero-left">
-    <img src="logo.png" alt="Youth Mock Trial ry">
     <h1>Youth Mock Trial ry</h1>
     <p>Empowering the next generation of legal professionals</p>
     <div class="org-type">Non Profit Organization</div>
+  </div>
+
+  <div class="hero-right">
+    <img src="logo.png" alt="Youth Mock Trial ry">
   </div>
 </div>
 
@@ -276,6 +287,7 @@
 
 </body>
 </html>
+
 
 
 
