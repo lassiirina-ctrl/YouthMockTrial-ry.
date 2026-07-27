@@ -161,8 +161,46 @@
     .offer-block h3 { font-size: 1.3em; color: #5A4632; margin-bottom: 10px; }
     .offer-block p { font-size: 0.95em; color: #444; }
 
+    /* CTA STRIP */
+    .cta-strip {
+      background: #F8F4EF;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    .cta-strip p {
+      font-size: 1.2em;
+      color: #5A4632;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #8A6A4A;
+      color: #FFFFFF;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #5A4632;
+      transform: translateY(-3px);
+    }
+
+    /* NEWS WRAPPER */
+    .news-wrapper {
+      background: #F7F7F7;
+      padding: 60px 20px;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
     /* NEWS */
-    .news-section { margin-top: 80px; }
+    .news-section { margin-top: 20px; }
     .news-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -330,33 +368,41 @@
     </div>
   </div>
 
-  <!-- NEWS -->
-  <div class="news-section">
-    <h2>Latest News</h2>
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <p>Want to get involved in Youth Mock Trial ry?</p>
+    <a href="join.html" class="cta-button">Join Us</a>
+  </div>
 
-    <div class="news-cards">
+  <!-- NEWS WRAPPER -->
+  <div class="news-wrapper">
+    <div class="news-section">
+      <h2>Latest News</h2>
 
-      <div class="news-card">
-        <h3>HYMT 2026 Registration Opens</h3>
-        <div class="date">July 2026</div>
-        <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and independent teams.</p>
-        <a href="#">Read more →</a>
+      <div class="news-cards">
+
+        <div class="news-card">
+          <h3>HYMT 2026 Registration Opens</h3>
+          <div class="date">July 2026</div>
+          <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and independent teams.</p>
+          <a href="#">Read more →</a>
+        </div>
+
+        <div class="news-card">
+          <h3>New Partnership with Legal Aid Finland</h3>
+          <div class="date">June 2026</div>
+          <p>Youth Mock Trial ry is proud to announce a new collaboration with Legal Aid Finland to expand access to legal education.</p>
+          <a href="#">Read more →</a>
+        </div>
+
+        <div class="news-card">
+          <h3>Volunteer Judge Applications Now Open</h3>
+          <div class="date">May 2026</div>
+          <p>We are seeking volunteer judges, lawyers, and law students to support our upcoming competitions and workshops.</p>
+          <a href="#">Read more →</a>
+        </div>
+
       </div>
-
-      <div class="news-card">
-        <h3>New Partnership with Legal Aid Finland</h3>
-        <div class="date">June 2026</div>
-        <p>Youth Mock Trial ry is proud to announce a new collaboration with Legal Aid Finland to expand access to legal education.</p>
-        <a href="#">Read more →</a>
-      </div>
-
-      <div class="news-card">
-        <h3>Volunteer Judge Applications Now Open</h3>
-        <div class="date">May 2026</div>
-        <p>We are seeking volunteer judges, lawyers, and law students to support our upcoming competitions and workshops.</p>
-        <a href="#">Read more →</a>
-      </div>
-
     </div>
   </div>
 
