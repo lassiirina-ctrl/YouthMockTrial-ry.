@@ -17,76 +17,108 @@
       overflow-x: hidden;
     }
 
-    /* NAVIGATION */
-    nav {
+    /* TOP BAR */
+    .top-bar {
       background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
-      padding: 16px 20px;
+      padding: 12px 20px;
       display: flex;
-      gap: 25px;
       align-items: center;
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    nav a, nav button {
-      font-size: 1em;
-      font-weight: 600;
-      text-decoration: none;
-      color: #1A1A1A;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: none;
-      border: none;
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       cursor: pointer;
-      transition: 0.3s ease;
     }
 
-    nav a:hover, nav button:hover {
-      background: #F0F0F0;
-      transform: translateY(-2px);
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #1A1A1A;
+      border-radius: 2px;
     }
 
-    /* DROPDOWN */
-    .dropdown {
-      position: relative;
+    .top-right-label {
+      font-size: 0.85em;
+      color: #777777;
+      font-weight: 500;
     }
 
-    .dropdown-menu {
+    /* SLIDE-IN MENU */
+    .side-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
       display: none;
-      position: absolute;
-      top: 48px;
-      left: 0;
-      background: #FFFFFF;
-      border: 1px solid #E6E2DD;
-      border-radius: 8px;
-      padding: 10px 0;
-      min-width: 180px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      z-index: 999;
     }
 
-    .dropdown-menu a {
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: #FFFFFF;
+      box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+      padding: 20px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.open {
+      transform: translateX(0);
+    }
+
+    .side-menu h3 {
+      font-size: 1.1em;
+      margin-bottom: 16px;
+      color: #5A4632;
+      font-weight: 600;
+    }
+
+    .side-menu a {
       display: block;
-      padding: 10px 18px;
-      font-size: 0.95em;
       text-decoration: none;
       color: #1A1A1A;
+      font-weight: 500;
+      padding: 8px 0;
+      font-size: 0.95em;
     }
 
-    .dropdown-menu a:hover {
-      background: #F0F0F0;
+    .side-menu a:hover {
+      color: #8A6A4A;
     }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
+    .side-subtitle {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    .side-submenu {
+      margin-left: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .side-submenu a {
+      font-size: 0.9em;
+      font-weight: 400;
     }
 
     /* HERO */
     .hero {
       position: relative;
       height: 520px;
-      background: url('photo1.jpg') center/cover no-repeat;
+      background: url('photo1.jpg') top center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -111,31 +143,41 @@
       font-family: "Playfair Display", serif;
       font-size: 3.4em;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .hero-content p {
       font-size: 1.2em;
-      opacity: 0.9;
+      opacity: 0.95;
+      margin-bottom: 8px;
     }
 
-    /* INTRO SECTION */
+    .hero-tagline {
+      font-size: 0.9em;
+      color: #D0D0D0;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 480px;
+        background-position: top center;
+        background-size: cover;
+      }
+      .hero-content {
+        padding: 0 20px;
+        width: 100%;
+      }
+    }
+
+    /* MAIN CONTAINER */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
     }
 
-    .intro-section {
-      background: #FAFAFA;
-      padding: 40px;
-      border-left: 6px solid #D8C0A8;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 60px;
-    }
-
-    h2 {
+    h2.section-title {
       font-family: "Playfair Display", serif;
       font-size: 2.4em;
       margin-bottom: 20px;
@@ -143,7 +185,7 @@
       position: relative;
     }
 
-    h2::before {
+    h2.section-title::before {
       content: '';
       position: absolute;
       bottom: -8px;
@@ -152,6 +194,71 @@
       height: 4px;
       background: #8A6A4A;
       border-radius: 4px;
+    }
+
+    /* WHAT WE OFFER / JOIN US / NEWS GRID */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .info-card {
+      background: #F8F4EF;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #E0D6C8;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+
+    .info-card h3 {
+      font-size: 1.2em;
+      color: #5A4632;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      font-size: 0.95em;
+      color: #444;
+    }
+
+    /* BIG JOIN US BOX */
+    .join-big {
+      background: #F8F4EF;
+      border-radius: 14px;
+      padding: 32px;
+      border: 1px solid #E0D6C8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
+
+    .join-big h3 {
+      font-size: 1.5em;
+      color: #5A4632;
+      margin-bottom: 12px;
+    }
+
+    .join-big p {
+      font-size: 0.95em;
+      color: #444;
+      margin-bottom: 18px;
+    }
+
+    .join-big a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: #8A6A4A;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+    }
+
+    .join-big a.button:hover {
+      background: #6F5236;
     }
 
     /* FOOTER */
@@ -179,35 +286,65 @@
       color: #5A4632;
     }
 
+    .footer-section p,
+    .footer-section a {
+      font-size: 0.95em;
+      color: #444;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #8A6A4A;
+    }
+
     .footer-bottom {
       text-align: center;
       margin-top: 40px;
       font-size: 0.85em;
       opacity: 0.7;
     }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="hamburger" onclick="openMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="top-right-label">
+    non-profit organization
+  </div>
+</div>
+
+<!-- SLIDE-IN MENU -->
+<div class="side-menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+  <h3>Navigation</h3>
   <a href="index.html">Home</a>
 
-  <div class="dropdown">
-    <button>About Us</button>
-    <div class="dropdown-menu">
-      <a href="about.html">Overview</a>
-      <a href="mission.html">Mission</a>
-      <a href="leadership.html">Leadership</a>
-    </div>
+  <div class="side-subtitle">About Us</div>
+  <div class="side-submenu">
+    <a href="about.html">Overview</a>
+    <a href="mission.html">Mission</a>
+    <a href="leadership.html">Leadership</a>
   </div>
 
   <a href="hymt.html">HYMT</a>
   <a href="join.html">Join Us</a>
   <a href="news.html">News</a>
   <a href="contact.html">Contact</a>
-</nav>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -215,19 +352,95 @@
   <div class="hero-content">
     <h1>Youth Mock Trial ry</h1>
     <p>Empowering the next generation of legal professionals.</p>
+    <div class="hero-tagline">non-profit organization</div>
   </div>
 </div>
 
-<!-- INTRO -->
+<!-- MAIN CONTENT -->
 <div class="container">
-  <div class="intro-section">
-    <h2>Our Mission</h2>
+
+  <!-- WHAT WE OFFER -->
+  <section>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="grid-3">
+      <div class="info-card">
+        <h3>Mock Trial Competitions</h3>
+        <p>Structured courtroom simulations where students take on roles as lawyers, witnesses, and jurors.</p>
+      </div>
+      <div class="info-card">
+        <h3>Workshops & Training</h3>
+        <p>Skill-building sessions in advocacy, public speaking, and legal reasoning for youth across Finland.</p>
+      </div>
+      <div class="info-card">
+        <h3>School Partnerships</h3>
+        <p>Collaborations with schools to integrate mock trial and legal education into classroom activities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIG JOIN US BOX -->
+  <section class="join-big">
+    <h3>Want to get involved in Youth Mock Trial ry?</h3>
     <p>
-      Youth Mock Trial ry is dedicated to expanding access to legal education for young people across Finland.
-      Through competitions, workshops, and school partnerships, we help students develop advocacy skills,
-      critical thinking, and confidence in a courtroom setting.
+      Whether you are a student, teacher, legal professional, or community member, there are many ways to
+      participate in Youth Mock Trial ry. Join us in expanding access to legal education and empowering
+      the next generation of advocates.
     </p>
-  </div>
+    <a href="join.html" class="button">Learn more about joining us</a>
+  </section>
+
+  <!-- JOIN US SMALL BOXES -->
+  <section>
+    <h2 class="section-title">Join Us</h2>
+    <div class="grid-3">
+      <div class="info-card">
+        <h3>Student Participant</h3>
+        <p>Take part in competitions and workshops to develop your advocacy and critical thinking skills.</p>
+      </div>
+      <div class="info-card">
+        <h3>Volunteer Judge</h3>
+        <p>Support youth by serving as a judge or mentor during mock trial events.</p>
+      </div>
+      <div class="info-card">
+        <h3>School Partner</h3>
+        <p>Bring mock trial programs to your school and collaborate on legal education initiatives.</p>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:24px;">
+      <div class="info-card">
+        <h3>Community Volunteer</h3>
+        <p>Help organize events, support logistics, and promote legal education in your community.</p>
+      </div>
+      <div class="info-card">
+        <h3>Legal Professional</h3>
+        <p>Share your expertise by mentoring students and contributing to program development.</p>
+      </div>
+      <div class="info-card">
+        <h3>Supporter & Donor</h3>
+        <p>Contribute resources to help us expand access to youth legal education across Finland.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST NEWS -->
+  <section style="margin-top:60px;">
+    <h2 class="section-title">Latest News</h2>
+    <div class="grid-3">
+      <div class="info-card">
+        <h3>HYMT 2026 Registration Opens</h3>
+        <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and teams.</p>
+      </div>
+      <div class="info-card">
+        <h3>New Partnership Announced</h3>
+        <p>We are expanding our collaboration with legal organizations to reach more youth across Finland.</p>
+      </div>
+      <div class="info-card">
+        <h3>Workshop Series Launch</h3>
+        <p>A new workshop series will offer hands-on training in advocacy, evidence, and courtroom procedure.</p>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <!-- FOOTER -->
@@ -245,10 +458,12 @@
     </div>
 
     <div class="footer-section">
-      <h4>Follow Us</h4>
-      <p>Instagram</p>
-      <p>TikTok</p>
-      <p>LinkedIn</p>
+      <h4>Quick Links</h4>
+      <a href="hymt.html">HYMT</a><br>
+      <a href="join.html">Join Us</a><br>
+      <a href="news.html">News</a><br>
+      <a href="about.html">About Us</a><br>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 
@@ -257,5 +472,18 @@
   </div>
 </footer>
 
+<script>
+  function openMenu() {
+    document.getElementById('sideMenu').classList.add('open');
+    document.getElementById('menuOverlay').style.display = 'block';
+  }
+
+  function closeMenu() {
+    document.getElementById('sideMenu').classList.remove('open');
+    document.getElementById('menuOverlay').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
+
