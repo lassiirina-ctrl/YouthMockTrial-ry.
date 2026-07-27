@@ -2,50 +2,338 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About — Youth Mock Trial ry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Youth Mock Trial ry</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-    header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
-    nav { background: #333; padding: 10px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; }
-    footer { text-align: center; padding: 20px; background: #1a1a1a; color: white; margin-top: 40px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Inter, sans-serif;
+      background: #FFFFFF;
+      color: #1A1A1A;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAVIGATION (same as homepage) */
+    nav {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E6E2DD;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .nav-links { display: flex; gap: 20px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      color: #1A1A1A;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+    nav a:hover { background: #F0F0F0; transform: translateY(-2px); }
+
+    .dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      background: #FFFFFF;
+      border: 1px solid #E6E2DD;
+      border-radius: 8px;
+      padding: 10px 0;
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .dropdown-menu a { display: block; padding: 10px 18px; }
+    .dropdown:hover .dropdown-menu { display: block; }
+
+    /* HERO */
+    .hero {
+      background: #F5EFE7;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3em;
+      color: #5A4632;
+    }
+
+    /* CONTENT */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #5A4632;
+      position: relative;
+    }
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #8A6A4A;
+      border-radius: 4px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section p {
+      font-size: 1.05em;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* VALUES */
+    .values-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .value-box {
+      flex: 1;
+      min-width: 250px;
+      background: #F5EFE7;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #E0D6CC;
+      text-align: center;
+    }
+    .value-box h3 {
+      font-size: 1.3em;
+      color: #5A4632;
+      margin-bottom: 10px;
+    }
+
+    /* LEADERSHIP */
+    .leaders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .leader-card {
+      background: #FAFAFA;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #E0E0E0;
+    }
+    .leader-card h4 {
+      font-size: 1.2em;
+      color: #5A4632;
+      margin-bottom: 6px;
+    }
+    .leader-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #F5F5F5;
+      padding: 50px 20px;
+      color: #444;
+      border-top: 1px solid #E0E0E0;
+      margin-top: 80px;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-section h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3em;
+      margin-bottom: 12px;
+      color: #5A4632;
+    }
+    .footer-section p,
+    .footer-section a {
+      font-size: 0.95em;
+      color: #444;
+      text-decoration: none;
+    }
+    .social-links { display: flex; flex-direction: column; gap: 6px; }
+    .social-icon:hover { color: #8A6A4A; }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85em;
+      opacity: 0.7;
+    }
+
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>About Youth Mock Trial ry</h1>
-</header>
-
+<!-- NAV -->
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="competition.html">Competition</a>
-  <a href="sponsors.html">Sponsors</a>
-  <a href="contact.html">Contact</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <a href="#">About Us</a>
+      <div class="dropdown-menu">
+        <a href="about.html">Overview</a>
+        <a href="#">Leadership</a>
+        <a href="#">Sponsors</a>
+      </div>
+    </div>
+
+    <a href="hymt.html">Helsinki Youth Mock Trial</a>
+
+    <div class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-menu">
+        <a href="#">Join Us</a>
+        <a href="#">Other Events</a>
+      </div>
+    </div>
+
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
-<div class="container">
-  <h2>Our Mission</h2>
-  <p>
-    Youth Mock Trial ry was founded to give young people a platform to explore the legal system,
-    develop critical thinking, and gain confidence in public speaking.
-  </p>
-
-  <h2>Our Values</h2>
-  <ul>
-    <li>Accessibility</li>
-    <li>Education</li>
-    <li>Integrity</li>
-    <li>Youth empowerment</li>
-  </ul>
+<!-- HERO -->
+<div class="hero">
+  <h1>About Us</h1>
 </div>
 
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- WHO WE ARE -->
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>
+      Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and legal literacy among youth across Finland. 
+      We work with schools, legal professionals, and community partners to create accessible pathways into the world of law, advocacy, and justice.
+    </p>
+  </div>
+
+  <!-- MISSION -->
+  <div class="section">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life. 
+      Through courtroom simulations, workshops, and national competitions, we help students develop critical thinking, advocacy, and leadership abilities.
+    </p>
+  </div>
+
+  <!-- VALUES -->
+  <div class="section">
+    <h2>Our Values</h2>
+
+    <div class="values-row">
+      <div class="value-box">
+        <h3>Integrity</h3>
+        <p>We promote fairness, honesty, and respect in all aspects of our work.</p>
+      </div>
+
+      <div class="value-box">
+        <h3>Education</h3>
+        <p>We believe legal literacy is essential for empowered citizenship.</p>
+      </div>
+
+      <div class="value-box">
+        <h3>Community</h3>
+        <p>We collaborate with schools, families, and legal professionals to support youth.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div class="section">
+    <h2>Leadership</h2>
+
+    <div class="leaders">
+      <div class="leader-card">
+        <h4>Person Name</h4>
+        <p>Chairperson</p>
+      </div>
+
+      <div class="leader-card">
+        <h4>Person Name</h4>
+        <p>Vice Chair</p>
+      </div>
+
+      <div class="leader-card">
+        <h4>Person Name</h4>
+        <p>Program Director</p>
+      </div>
+
+      <div class="leader-card">
+        <h4>Person Name</h4>
+        <p>Community Outreach Lead</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
-  © 2026 Youth Mock Trial ry
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h4>Youth Mock Trial ry</h4>
+      <p>Advancing legal education for youth across Finland.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: info@youthmocktrial.fi</p>
+      <p>Location: Helsinki, Finland</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#" class="social-icon">Instagram</a>
+        <a href="#" class="social-icon">TikTok</a>
+        <a href="#" class="social-icon">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="hymt.html">HYMT</a><br>
+      <a href="news.html">News</a><br>
+      <a href="join.html">Join Us</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Youth Mock Trial ry — All Rights Reserved
+  </div>
 </footer>
 
 </body>
 </html>
+
