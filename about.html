@@ -17,7 +17,7 @@
       overflow-x: hidden;
     }
 
-    /* NAVIGATION (same as homepage) */
+    /* NAVIGATION */
     nav {
       background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
@@ -53,7 +53,7 @@
       min-width: 180px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-    .dropdown-menu a { display: block; padding: 10px 18px; font-size: 0.95em; }
+    .dropdown-menu a { display: block; padding: 10px 18px; }
     .dropdown:hover .dropdown-menu { display: block; }
 
     /* HAMBURGER */
@@ -68,7 +68,12 @@
       border-bottom: 1px solid #E6E2DD;
       padding: 10px 20px;
     }
-    .mobile-menu a { padding: 12px 0; font-weight: 600; color: #1A1A1A; text-decoration: none; }
+    .mobile-menu a {
+      padding: 12px 0;
+      font-weight: 600;
+      color: #1A1A1A;
+      text-decoration: none;
+    }
 
     /* HERO */
     .hero {
@@ -107,10 +112,7 @@
       border-radius: 4px;
     }
 
-    .section {
-      margin-bottom: 60px;
-    }
-
+    .section { margin-bottom: 60px; }
     .section p {
       font-size: 1.05em;
       color: #333;
@@ -199,7 +201,7 @@
       opacity: 0.7;
     }
 
-    /* MOBILE RESPONSIVE */
+    /* MOBILE */
     @media (max-width: 768px) {
       nav .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -268,25 +270,16 @@
 <!-- MAIN CONTENT -->
 <div class="container">
 
-  <!-- WHO WE ARE -->
   <div class="section">
     <h2>Who We Are</h2>
-    <p>
-      Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and legal literacy among youth across Finland.
-      We work with schools, legal professionals, and community partners to create accessible pathways into the world of law, advocacy, and justice.
-    </p>
+    <p>Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and legal literacy among youth across Finland.</p>
   </div>
 
-  <!-- MISSION -->
   <div class="section">
     <h2>Our Mission</h2>
-    <p>
-      Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life.
-      Through courtroom simulations, workshops, and national competitions, we help students develop critical thinking, advocacy, and leadership abilities.
-    </p>
+    <p>Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life.</p>
   </div>
 
-  <!-- VALUES -->
   <div class="section">
     <h2>Our Values</h2>
 
@@ -308,7 +301,6 @@
     </div>
   </div>
 
-  <!-- LEADERSHIP -->
   <div class="section">
     <h2>Leadership</h2>
 
