@@ -28,13 +28,13 @@
       align-items: center;
       justify-content: space-between;
       padding: 100px 60px;
-      background: linear-gradient(135deg, #FDFCFB 0%, #FAF8F5 100%);
+      background: #F5EFE7; /* light cream */
       border-bottom: 2px solid #E6E2DD;
       position: relative;
       overflow: hidden;
     }
 
-    /* Floating playful blobs */
+    /* Playful brown blobs */
     .blob {
       position: absolute;
       border-radius: 50%;
@@ -43,8 +43,8 @@
       animation: float 6s ease-in-out infinite;
     }
 
-    .blob.teal {
-      background: #D7F2F0;
+    .blob.dark {
+      background: #5A4632; /* deep legal brown */
       width: 420px;
       height: 420px;
       top: -120px;
@@ -52,12 +52,12 @@
       animation-delay: 0s;
     }
 
-    .blob.coral {
-      background: #F9D9D0;
+    .blob.tan {
+      background: #C2A78C; /* soft tan */
       width: 380px;
       height: 380px;
       bottom: -140px;
-      right: -100px;
+      left: 40px;
       animation-delay: 2s;
     }
 
@@ -79,7 +79,7 @@
       font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: -0.7px;
-      background: linear-gradient(90deg, #000, #444);
+      background: linear-gradient(90deg, #5A4632, #7A5F47);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -108,21 +108,15 @@
       height: auto;
       display: block;
       filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.15));
-      animation: popIn 1.2s ease-out;
     }
 
-    @keyframes popIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    /* WAVY DIVIDER */
-    .wave {
+    /* CLEAN ROUNDED DIVIDER */
+    .divider {
       width: 100%;
-      height: 80px;
-      background: url('data:image/svg+xml;utf8,<svg width="100%" height="80" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q50 60 100 20 T200 20 T300 20 T400 20 T500 20 T600 20 T700 20 T800 20 T900 20 T1000 20 V80 H0 Z" fill="%23FAF8F5"/></svg>');
-      background-size: cover;
-      margin-top: -20px;
+      height: 60px;
+      background: #F5EFE7;
+      border-bottom-left-radius: 50% 30px;
+      border-bottom-right-radius: 50% 30px;
     }
 
     /* NAVIGATION */
@@ -171,7 +165,7 @@
       left: 0;
       width: 70px;
       height: 4px;
-      background: #D7F2F0;
+      background: #7A5F47; /* medium brown */
       border-radius: 4px;
     }
 
@@ -179,7 +173,7 @@
     .intro-section {
       background: #FAFAFA;
       padding: 40px;
-      border-left: 6px solid #D7F2F0;
+      border-left: 6px solid #C2A78C;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 60px;
@@ -208,7 +202,6 @@
       overflow: hidden;
     }
 
-    /* playful top accent */
     .feature-card::before {
       content: '';
       position: absolute;
@@ -216,7 +209,7 @@
       left: 0;
       right: 0;
       height: 6px;
-      background: #F9D9D0;
+      background: #C2A78C;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
@@ -224,7 +217,7 @@
     }
 
     .feature-card:hover {
-      border: 1px solid #D7F2F0;
+      border: 1px solid #7A5F47;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       transform: translateY(-4px);
     }
@@ -236,7 +229,7 @@
     .feature-card h4 {
       font-size: 1.5em;
       font-weight: 700;
-      color: #000000;
+      color: #5A4632;
       margin-bottom: 15px;
       display: flex;
       align-items: center;
@@ -276,7 +269,7 @@
       transform: translateX(-50%);
       width: 120px;
       height: 120px;
-      background: #D7F2F0;
+      background: #C2A78C;
       border-radius: 50%;
       opacity: 0.3;
       filter: blur(4px);
@@ -288,8 +281,8 @@
 
 <!-- HERO SECTION -->
 <div class="hero">
-  <div class="blob teal"></div>
-  <div class="blob coral"></div>
+  <div class="blob dark"></div>
+  <div class="blob tan"></div>
 
   <div class="hero-left">
     <h1>Youth Mock Trial ry</h1>
@@ -302,7 +295,7 @@
   </div>
 </div>
 
-<div class="wave"></div>
+<div class="divider"></div>
 
 <nav>
   <a href="index.html">Home</a>
