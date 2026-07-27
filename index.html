@@ -83,9 +83,7 @@
 
     /* MOBILE NAVIGATION */
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
+      nav { display: none; }
 
       .mobile-nav {
         background: #FFFFFF;
@@ -209,33 +207,31 @@
       color: #5A4632;
     }
 
-    /* OFFER SECTION */
-    .offer-section h2 {
+    /* PROGRAMS & INITIATIVES — FIXED TO MATCH YOUR SCREENSHOT */
+    .programs-section h2 {
       font-family: "Playfair Display", serif;
       font-size: 2.4em;
       margin-bottom: 20px;
       color: #5A4632;
     }
 
-    .offer-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
+    .programs-list {
+      margin-top: 20px;
     }
 
-    .offer-block {
-      background: #F8F4EF;
-      border-radius: 14px;
-      padding: 24px;
-      border: 1px solid #E0D6C8;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      text-align: center;
+    .program-item {
+      margin-bottom: 28px;
     }
 
-    .offer-icon {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+    .program-item h4 {
+      font-size: 1.3em;
+      color: #5A4632;
+      margin-bottom: 6px;
+    }
+
+    .program-item p {
+      font-size: 0.95em;
+      color: #444;
     }
 
     /* CTA STRIP */
@@ -339,7 +335,7 @@
     .footer-section a {
       display: block;
       font-size: 0.95em;
-      color: #444;
+      color: #444; /* FIXED: no blue */
       text-decoration: none;
       margin-bottom: 6px;
     }
@@ -418,35 +414,35 @@
     </p>
   </div>
 
-  <h2>Programs & Initiatives</h2>
+  <!-- PROGRAMS & INITIATIVES — FIXED -->
+  <div class="programs-section">
+    <h2>Programs & Initiatives</h2>
 
-  <div class="programs">
-    <div class="program-card">
-      <h4>⚖️ National Mock Trial Competition</h4>
-      <p>Our flagship program brings together students from across the country to compete in realistic courtroom simulations.</p>
-    </div>
+    <div class="programs-list">
 
-    <div class="program-card">
-      <h4>📚 Legal Education Workshops</h4>
-      <p>We partner with legal professionals to deliver hands-on workshops in advocacy, evidence, and courtroom procedure.</p>
-    </div>
+      <div class="program-item">
+        <h4>⚖️ National Mock Trial Competition</h4>
+        <p>Our flagship program brings together students from across the country to compete in realistic courtroom simulations.</p>
+      </div>
 
-    <div class="program-card">
-      <h4>🏫 School Partnerships</h4>
-      <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      <div class="program-item">
+        <h4>📚 Legal Education Workshops</h4>
+        <p>We partner with legal professionals to deliver hands-on workshops in advocacy, evidence, and courtroom procedure.</p>
+      </div>
+
+      <div class="program-item">
+        <h4>🏫 School Partnerships</h4>
+        <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      </div>
+
     </div>
   </div>
 
-  <div class="join-big">
-    <h3>Want to get involved in Youth Mock Trial ry?</h3>
-    <p>
-      Whether you are a student, teacher, legal professional, or community member, there are many ways to
-      participate in Youth Mock Trial ry. Join us in expanding access to legal education and empowering
-      the next generation of advocates.
-    </p>
-    <a href="join.html" class="button">Learn more about joining us</a>
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <p>Want to get involved in Youth Mock Trial ry?</p>
+    <a href="join.html" class="cta-button">Join Us</a>
   </div>
-
 
   <!-- NEWS -->
   <div class="news-wrapper">
@@ -489,7 +485,7 @@
     <div class="footer-section">
       <h4>Youth Mock Trial ry</h4>
       <p>Advancing legal education for youth across Finland.</p>
-      <p>Email: youthmocktrial.ry@gmail.com</p>
+      <p>Email: info@youthmocktrial.fi</p>
       <p>Location: Helsinki, Finland</p>
     </div>
 
