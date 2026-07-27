@@ -55,6 +55,7 @@
     nav .nav-links {
       display: flex;
       gap: 20px;
+      align-items: center;
     }
 
     nav a {
@@ -69,6 +70,35 @@
     nav a:hover {
       background: #F0F0F0;
       transform: translateY(-2px);
+    }
+
+    /* DROPDOWN */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      background: #FFFFFF;
+      border: 1px solid #E6E2DD;
+      border-radius: 8px;
+      padding: 10px 0;
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 18px;
+      font-size: 0.95em;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
 
     /* HAMBURGER */
@@ -226,21 +256,57 @@
       margin-bottom: 15px;
     }
 
-    /* PHOTO SECTION */
-    .photo-section {
+    /* NEWS SECTION */
+    .news-section {
       margin-top: 80px;
-      background: #F5EFE7;
-      padding: 60px 20px;
-      border-radius: 12px;
       animation: fadeUp 1s ease-out;
     }
 
-    .photo-section img {
-      width: 100%;
+    .news-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .news-card {
+      background: #FFFFFF;
+      padding: 30px;
+      border: 1px solid #E0E0E0;
       border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      animation: fadeIn 1.2s ease-out;
+      transition: 0.3s ease;
+      animation: fadeUp 1s ease-out;
+    }
+
+    .news-card:hover {
+      border-color: #8A6A4A;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+
+    .news-card h3 {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #5A4632;
+      margin-bottom: 10px;
+    }
+
+    .news-card .date {
+      font-size: 0.85em;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .news-card p {
+      font-size: 0.95em;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .news-card a {
+      font-weight: 600;
+      color: #8A6A4A;
+      text-decoration: none;
     }
 
     /* FOOTER */
@@ -314,12 +380,28 @@
 <nav>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="hymt.html">HYMT</a>
-    <a href="sponsors.html">Sponsors</a>
-    <a href="contact.html">Contacts</a>
-    <a href="join.html">Join Us</a>
-    <a href="events.html">Other Events</a>
+
+    <div class="dropdown">
+      <a href="#">About Us</a>
+      <div class="dropdown-menu">
+        <a href="#">Mission</a>
+        <a href="#">Leadership</a>
+        <a href="#">Sponsors</a>
+      </div>
+    </div>
+
+    <a href="hymt.html">Helsinki Youth Mock Trial</a>
+
+    <div class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-menu">
+        <a href="#">Join Us</a>
+        <a href="#">Other Events</a>
+      </div>
+    </div>
+
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
   </div>
 
   <div class="hamburger" onclick="toggleMenu()">
@@ -332,12 +414,11 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu">
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="#">About Us</a>
   <a href="hymt.html">HYMT</a>
-  <a href="sponsors.html">Sponsors</a>
-  <a href="contact.html">Contacts</a>
-  <a href="join.html">Join Us</a>
-  <a href="events.html">Other Events</a>
+  <a href="#">Programs</a>
+  <a href="news.html">News</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -382,9 +463,34 @@
     </div>
   </div>
 
-  <div class="photo-section">
-    <h2>Our Work in Action</h2>
-    <img src="photo2.jpg" alt="Youth Mock Trial Event">
+  <!-- NEWS SECTION -->
+  <div class="news-section">
+    <h2>Latest News</h2>
+
+    <div class="news-cards">
+
+      <div class="news-card">
+        <h3>HYMT 2026 Registration Opens</h3>
+        <div class="date">July 2026</div>
+        <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and independent teams.</p>
+        <a href="#">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <h3>New Partnership with Legal Aid Finland</h3>
+        <div class="date">June 2026</div>
+        <p>Youth Mock Trial ry is proud to announce a new collaboration with Legal Aid Finland to expand access to legal education.</p>
+        <a href="#">Read more →</a>
+      </div>
+
+      <div class="news-card">
+        <h3>Volunteer Judge Applications Now Open</h3>
+        <div class="date">May 2026</div>
+        <p>We are seeking volunteer judges, lawyers, and law students to support our upcoming competitions and workshops.</p>
+        <a href="#">Read more →</a>
+      </div>
+
+    </div>
   </div>
 
 </div>
@@ -395,6 +501,5 @@
 
 </body>
 </html>
-
 
 
