@@ -53,8 +53,22 @@
       min-width: 180px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-    .dropdown-menu a { display: block; padding: 10px 18px; }
+    .dropdown-menu a { display: block; padding: 10px 18px; font-size: 0.95em; }
     .dropdown:hover .dropdown-menu { display: block; }
+
+    /* HAMBURGER */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger div { width: 28px; height: 3px; background: #1A1A1A; border-radius: 2px; }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E6E2DD;
+      padding: 10px 20px;
+    }
+    .mobile-menu a { padding: 12px 0; font-weight: 600; color: #1A1A1A; text-decoration: none; }
 
     /* HERO */
     .hero {
@@ -185,7 +199,20 @@
       opacity: 0.7;
     }
 
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      nav .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 40px 15px; }
+    }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.mobile-menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
 </head>
 
 <body>
@@ -217,7 +244,21 @@
     <a href="news.html">News</a>
     <a href="contact.html">Contact</a>
   </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="hymt.html">HYMT</a>
+  <a href="#">Programs</a>
+  <a href="news.html">News</a>
+  <a href="contact.html">Contact</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -231,7 +272,7 @@
   <div class="section">
     <h2>Who We Are</h2>
     <p>
-      Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and legal literacy among youth across Finland. 
+      Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and legal literacy among youth across Finland.
       We work with schools, legal professionals, and community partners to create accessible pathways into the world of law, advocacy, and justice.
     </p>
   </div>
@@ -240,7 +281,7 @@
   <div class="section">
     <h2>Our Mission</h2>
     <p>
-      Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life. 
+      Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life.
       Through courtroom simulations, workshops, and national competitions, we help students develop critical thinking, advocacy, and leadership abilities.
     </p>
   </div>
@@ -336,4 +377,5 @@
 
 </body>
 </html>
+
 
