@@ -6,14 +6,6 @@
   <title>Youth Mock Trial ry</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Inter, sans-serif;
-      background: #FFFFFF;
-      color: #1A1A1A;
-      line-height: 1.7;
-      overflow-x: hidden;
     }
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -434,34 +426,6 @@
     </p>
   </div>
 
-  <!-- WHAT WE OFFER -->
-  <div class="offer-section">
-    <h2>What We Offer</h2>
-
-    <div class="programs-list">
-
-      <div class="program-item">
-        <h4>⚖️ Mock Trial Education</h4>
-        <p>We provide structured legal education for youth, focusing on advocacy, courtroom skills, and justice literacy.</p>
-      </div>
-
-      <div class="program-item">
-        <h4>📚 Workshops & Training</h4>
-        <p>Our workshops are led by legal professionals, offering hands‑on experience in evidence, argumentation, and procedure.</p>
-      </div>
-
-      <div class="program-item">
-        <h4>🏛️ National Competitions</h4>
-        <p>We organize Finland’s leading youth mock trial competitions, including the Helsinki Youth Mock Trial.</p>
-      </div>
-
-      <div class="program-item">
-        <h4>🤝 School Partnerships</h4>
-        <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
-      </div>
-
-    </div>
-  </div>
 
   <!-- PROGRAMS & INITIATIVES — BEIGE BOXES -->
   <div class="programs-section">
