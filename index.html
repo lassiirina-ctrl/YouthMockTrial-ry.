@@ -28,13 +28,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 100px 60px;
-      background: #F5EFE7; /* light cream */
-      border-bottom: 2px solid #E6E2DD;
+      background: #F5EFE7; /* warm cream */
       position: relative;
       overflow: hidden;
     }
 
-    /* Playful brown blobs */
+    /* Warm brown blobs */
     .blob {
       position: absolute;
       border-radius: 50%;
@@ -43,8 +42,8 @@
       animation: float 6s ease-in-out infinite;
     }
 
-    .blob.dark {
-      background: #5A4632; /* deep legal brown */
+    .blob.brown {
+      background: #8A6A4A; /* warm medium brown */
       width: 420px;
       height: 420px;
       top: -120px;
@@ -53,7 +52,7 @@
     }
 
     .blob.tan {
-      background: #C2A78C; /* soft tan */
+      background: #D8C0A8; /* warm tan */
       width: 380px;
       height: 380px;
       bottom: -140px;
@@ -67,7 +66,7 @@
       100% { transform: translateY(0px); }
     }
 
-    /* LEFT SIDE (TEXT) */
+    /* LEFT SIDE */
     .hero-left {
       max-width: 55%;
       z-index: 2;
@@ -79,9 +78,8 @@
       font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: -0.7px;
-      background: linear-gradient(90deg, #5A4632, #7A5F47);
-      -webkit-background-clip: text;
-      color: transparent;
+      color: #5A4632; /* deep warm brown */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
     }
 
     .hero-left p {
@@ -98,25 +96,40 @@
       margin-top: 8px;
     }
 
-    /* RIGHT SIDE (LOGO) */
+    /* RIGHT SIDE — TAN CIRCLE + LOGO */
     .hero-right {
+      position: relative;
       z-index: 2;
     }
 
+    .logo-circle {
+      width: 360px;
+      height: 360px;
+      background: #D8C0A8; /* light tan */
+      border-radius: 50%;
+      position: absolute;
+      top: -40px; /* slight upward offset */
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    }
+
     .hero-right img {
-      width: 190px;
+      width: 240px; /* medium logo size */
       height: auto;
+      position: relative;
+      margin-top: 60px; /* centers inside circle with padding */
       display: block;
       filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.15));
     }
 
-    /* CLEAN ROUNDED DIVIDER */
+    /* CLEAN CURVED DIVIDER */
     .divider {
       width: 100%;
-      height: 60px;
+      height: 50px;
       background: #F5EFE7;
-      border-bottom-left-radius: 50% 30px;
-      border-bottom-right-radius: 50% 30px;
+      border-bottom-left-radius: 100% 40px;
+      border-bottom-right-radius: 100% 40px;
     }
 
     /* NAVIGATION */
@@ -156,6 +169,7 @@
       font-size: 2.6em;
       margin-bottom: 20px;
       position: relative;
+      color: #5A4632;
     }
 
     h2::before {
@@ -165,7 +179,7 @@
       left: 0;
       width: 70px;
       height: 4px;
-      background: #7A5F47; /* medium brown */
+      background: #8A6A4A;
       border-radius: 4px;
     }
 
@@ -173,7 +187,7 @@
     .intro-section {
       background: #FAFAFA;
       padding: 40px;
-      border-left: 6px solid #C2A78C;
+      border-left: 6px solid #D8C0A8;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 60px;
@@ -184,7 +198,7 @@
       color: #333;
     }
 
-    /* FEATURES SECTION */
+    /* FEATURES */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -209,7 +223,7 @@
       left: 0;
       right: 0;
       height: 6px;
-      background: #C2A78C;
+      background: #D8C0A8;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
@@ -217,7 +231,7 @@
     }
 
     .feature-card:hover {
-      border: 1px solid #7A5F47;
+      border: 1px solid #8A6A4A;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       transform: translateY(-4px);
     }
@@ -269,7 +283,7 @@
       transform: translateX(-50%);
       width: 120px;
       height: 120px;
-      background: #C2A78C;
+      background: #D8C0A8;
       border-radius: 50%;
       opacity: 0.3;
       filter: blur(4px);
@@ -281,7 +295,7 @@
 
 <!-- HERO SECTION -->
 <div class="hero">
-  <div class="blob dark"></div>
+  <div class="blob brown"></div>
   <div class="blob tan"></div>
 
   <div class="hero-left">
@@ -291,6 +305,7 @@
   </div>
 
   <div class="hero-right">
+    <div class="logo-circle"></div>
     <img src="logo.png" alt="Youth Mock Trial ry">
   </div>
 </div>
@@ -351,6 +366,3 @@
 
 </body>
 </html>
-
-
-
