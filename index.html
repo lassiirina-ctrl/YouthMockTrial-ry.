@@ -20,7 +20,6 @@
     /* ANIMATIONS */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
 
     /* NAVIGATION */
     nav {
@@ -59,7 +58,6 @@
       padding: 10px 0;
       min-width: 180px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      animation: fadeIn 0.3s ease-out;
     }
     .dropdown-menu a { display: block; padding: 10px 18px; font-size: 0.95em; }
     .dropdown:hover .dropdown-menu { display: block; }
@@ -75,7 +73,6 @@
       background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
       padding: 10px 20px;
-      animation: fadeIn 0.4s ease-out;
     }
     .mobile-menu a { padding: 12px 0; font-weight: 600; color: #1A1A1A; text-decoration: none; }
 
@@ -88,7 +85,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      animation: fadeIn 1.2s ease-out;
     }
     .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
     .hero-content {
@@ -104,20 +100,18 @@
       font-size: 3.4em;
       font-weight: 700;
       margin-bottom: 15px;
-      letter-spacing: -0.5px;
     }
-    .hero-content p { font-size: 1.2em; opacity: 0.9; margin-bottom: 8px; }
-    .org-type { font-size: 0.95em; opacity: 0.8; font-weight: 600; }
+    .hero-content p { font-size: 1.2em; opacity: 0.9; }
 
     /* CONTENT WRAPPER */
-    .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; animation: fadeUp 1s ease-out; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
     h2 {
       font-family: "Playfair Display", serif;
       font-size: 2.4em;
       margin-bottom: 20px;
-      position: relative;
       color: #5A4632;
-      animation: slideIn 0.8s ease-out;
+      position: relative;
     }
     h2::before {
       content: '';
@@ -140,83 +134,32 @@
       margin-bottom: 60px;
     }
 
-    /* WHO WE ARE */
-    .who-section {
-      margin-top: 60px;
+    /* WHAT WE OFFER (beige boxes) */
+    .offer-section { margin-top: 80px; }
+    .offer-row {
       display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .who-text {
-      flex: 1;
-      min-width: 280px;
-      font-size: 1.05em;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    /* WHAT WE DO (Option A) */
-    .what-section { margin-top: 80px; }
-    .what-wrapper {
-      display: flex;
-      gap: 40px;
+      gap: 30px;
       flex-wrap: wrap;
       margin-top: 30px;
     }
-    .what-left {
+    .offer-block {
       flex: 1;
-      min-width: 280px;
-      font-size: 1.05em;
-      color: #333;
-      line-height: 1.8;
-    }
-    .what-right {
-      flex: 1;
-      min-width: 280px;
-    }
-    .what-right ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .what-right li {
-      margin-bottom: 14px;
-      padding-left: 20px;
-      position: relative;
-      font-size: 1em;
-      color: #444;
-    }
-    .what-right li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #8A6A4A;
-      font-size: 1.4em;
-      line-height: 0.8;
-    }
-
-    /* HYMT BANNER */
-    .hymt-banner {
-      background: #8A6A4A;
-      color: #FFFFFF;
-      padding: 60px 20px;
-      text-align: center;
-      border-radius: 12px;
-      margin-top: 80px;
-    }
-    .hymt-content { max-width: 900px; margin: 0 auto; }
-    .hymt-banner h2 { font-size: 2.4em; margin-bottom: 15px; }
-    .hymt-banner p { font-size: 1.05em; opacity: 0.95; margin-bottom: 25px; }
-    .hymt-button {
-      display: inline-block;
+      min-width: 250px;
       background: #F5EFE7;
-      color: #5A4632;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
+      padding: 35px;
+      border-radius: 14px;
+      border: 1px solid #E0D6CC;
+      text-align: center;
       transition: 0.3s ease;
     }
-    .hymt-button:hover { background: #FFFFFF; transform: translateY(-3px); }
+    .offer-block:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border-color: #8A6A4A;
+    }
+    .offer-icon { font-size: 2.2em; margin-bottom: 15px; }
+    .offer-block h3 { font-size: 1.3em; color: #5A4632; margin-bottom: 10px; }
+    .offer-block p { font-size: 0.95em; color: #444; }
 
     /* NEWS */
     .news-section { margin-top: 80px; }
@@ -276,14 +219,6 @@
       opacity: 0.7;
     }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      nav .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .hero { height: 380px; background-attachment: scroll; }
-      .container { padding: 40px 15px; }
-      .who-section, .what-wrapper { flex-direction: column; }
-    }
   </style>
 
   <script>
@@ -346,7 +281,6 @@
   <div class="hero-content">
     <h1>Youth Mock Trial ry</h1>
     <p>Empowering the next generation of legal professionals</p>
-    <div class="org-type">Non Profit Organization</div>
   </div>
 </div>
 
@@ -363,52 +297,36 @@
     </p>
   </div>
 
-  <!-- WHO WE ARE -->
-  <div class="who-section">
-    <div class="who-text">
-      <h2>Who We Are</h2>
-      <p>
-        Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and
-        legal literacy among youth. We work with schools, legal professionals, and community partners
-        to create accessible pathways into the world of law, advocacy, and justice.
-      </p>
-    </div>
-  </div>
+  <!-- WHAT WE OFFER (beige boxes) -->
+  <div class="offer-section">
+    <h2>What We Offer</h2>
 
-  <!-- WHAT WE DO (Option A) -->
-  <div class="what-section">
-    <h2>What We Do</h2>
+    <div class="offer-row">
 
-    <div class="what-wrapper">
-      <div class="what-left">
-        <p>
-          Our work centers on providing meaningful, hands‑on legal education experiences for young
-          people across Finland. Through structured programming, professional mentorship, and
-          national‑level competitions, we help students develop confidence, critical thinking, and
-          advocacy skills.
-        </p>
+      <div class="offer-block">
+        <div class="offer-icon">⚖️</div>
+        <h3>Mock Trial Education</h3>
+        <p>We provide structured legal education for youth, focusing on advocacy, courtroom skills, and justice literacy.</p>
       </div>
 
-      <div class="what-right">
-        <ul>
-          <li>Mock trial education and courtroom skills</li>
-          <li>Workshops led by legal professionals</li>
-          <li>National youth competitions</li>
-          <li>School partnerships and curriculum support</li>
-        </ul>
+      <div class="offer-block">
+        <div class="offer-icon">📚</div>
+        <h3>Workshops & Training</h3>
+        <p>Our workshops are led by legal professionals, offering hands‑on experience in evidence, argumentation, and procedure.</p>
       </div>
-    </div>
-  </div>
 
-  <!-- HYMT BANNER -->
-  <div class="hymt-banner">
-    <div class="hymt-content">
-      <h2>Helsinki Youth Mock Trial</h2>
-      <p>
-        Our flagship competition brings together motivated students from across Finland to engage in
-        realistic courtroom simulations, develop advocacy skills, and experience the justice system firsthand.
-      </p>
-      <a href="hymt.html" class="hymt-button">Learn More</a>
+      <div class="offer-block">
+        <div class="offer-icon">🏛️</div>
+        <h3>National Competitions</h3>
+        <p>We organize Finland’s leading youth mock trial competitions, including the Helsinki Youth Mock Trial.</p>
+      </div>
+
+      <div class="offer-block">
+        <div class="offer-icon">🤝</div>
+        <h3>School Partnerships</h3>
+        <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      </div>
+
     </div>
   </div>
 
@@ -466,6 +384,23 @@
         <a href="#" class="social-icon">TikTok</a>
         <a href="#" class="social-icon">LinkedIn</a>
       </div>
-    </
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="hymt.html">HYMT</a><br>
+      <a href="news.html">News</a><br>
+      <a href="join.html">Join Us</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Youth Mock Trial ry — All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>
 
 
