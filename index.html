@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+  <!-- FORCE GITHUB PAGES TO STOP USING OLD CACHED VERSION -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youth Mock Trial ry</title>
 
@@ -15,6 +21,15 @@
       color: #1A1A1A;
       line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    /* REMOVE BLUE LINKS */
+    a {
+      color: #444 !important;
+      text-decoration: none !important;
+    }
+    a:hover {
+      color: #8A6A4A !important;
     }
 
     /* DESKTOP NAVIGATION */
@@ -33,7 +48,6 @@
     nav a, nav button {
       font-size: 1em;
       font-weight: 600;
-      text-decoration: none;
       color: #1A1A1A;
       padding: 10px 14px;
       border-radius: 8px;
@@ -69,7 +83,6 @@
       display: block;
       padding: 10px 18px;
       font-size: 0.95em;
-      text-decoration: none;
       color: #1A1A1A;
     }
 
@@ -83,9 +96,7 @@
 
     /* MOBILE NAVIGATION */
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
+      nav { display: none; }
 
       .mobile-nav {
         background: #FFFFFF;
@@ -138,7 +149,6 @@
         font-size: 1em;
         font-weight: 600;
         color: #1A1A1A;
-        text-decoration: none;
       }
     }
 
@@ -209,74 +219,105 @@
       color: #5A4632;
     }
 
-    /* FUN BEIGE BOXES WITH EMOJIS */
-    .programs {
+    /* WHAT WE OFFER — EMOJI LIST */
+    .offer-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4em;
+      margin-bottom: 20px;
+      color: #5A4632;
+    }
+
+    .programs-list {
+      margin-top: 20px;
+    }
+
+    .program-item {
+      margin-bottom: 28px;
+    }
+
+    .program-item h4 {
+      font-size: 1.3em;
+      color: #5A4632;
+      margin-bottom: 6px;
+    }
+
+    .program-item p {
+      font-size: 0.95em;
+      color: #444;
+    }
+
+    /* PROGRAMS & INITIATIVES — BEIGE BOXES WITH EMOJIS */
+    .programs-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4em;
+      margin-bottom: 20px;
+      color: #5A4632;
+    }
+
+    .programs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 30px;
     }
 
-    .program-card {
+    .program-box {
       background: #F8F4EF;
       border-radius: 14px;
       padding: 24px;
       border: 1px solid #E0D6C8;
       box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .program-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    }
-
-    .program-card h4 {
-      font-size: 1.2em;
+    .program-box h4 {
+      font-size: 1.3em;
       color: #5A4632;
       margin-bottom: 10px;
     }
 
-    /* BIG JOIN US BOX */
-    .join-big {
-      background: #F8F4EF;
-      border-radius: 14px;
-      padding: 32px;
-      border: 1px solid #E0D6C8;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.07);
-      margin-top: 50px;
-      margin-bottom: 60px;
+    .program-box p {
+      font-size: 0.95em;
+      color: #444;
     }
 
-    .join-big h3 {
-      font-size: 1.5em;
+    /* CTA STRIP */
+    .cta-strip {
+      background: #F8F4EF;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #E0D6C8;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-strip p {
+      font-size: 1.3em;
       color: #5A4632;
       margin-bottom: 12px;
     }
 
-    .join-big p {
-      font-size: 0.95em;
-      color: #444;
-      margin-bottom: 18px;
-    }
-
-    .join-big a.button {
+    .cta-button {
       display: inline-block;
       padding: 10px 22px;
       border-radius: 999px;
       background: #8A6A4A;
       color: #FFFFFF;
-      text-decoration: none;
       font-size: 0.95em;
       font-weight: 600;
     }
 
-    /* LATEST NEWS WITH EMOJIS */
-    .news-grid {
+    /* NEWS */
+    .news-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4em;
+      margin-bottom: 20px;
+      color: #5A4632;
+    }
+
+    .news-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
-      margin-top: 30px;
     }
 
     .news-card {
@@ -287,13 +328,24 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.06);
     }
 
-    .news-card h4 {
+    .news-card h3 {
       font-size: 1.2em;
       color: #5A4632;
+      margin-bottom: 6px;
+    }
+
+    .news-card .date {
+      font-size: 0.85em;
+      color: #777;
       margin-bottom: 10px;
     }
 
-    /* FOOTER WITH SOCIALS */
+    .news-card a {
+      color: #8A6A4A !important;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
     footer {
       background: #F5F5F5;
       padding: 50px 20px;
@@ -318,16 +370,28 @@
       color: #5A4632;
     }
 
-    .socials a {
-      display: block;
-      margin-bottom: 8px;
-      text-decoration: none;
-      color: #444;
+    .footer-section p {
       font-size: 0.95em;
+      color: #444;
+      margin-bottom: 6px;
     }
 
-    .socials a:hover {
-      color: #8A6A4A;
+    .footer-section a {
+      display: block;
+      font-size: 0.95em;
+      color: #444 !important;
+      margin-bottom: 6px;
+    }
+
+    .footer-section a:hover {
+      color: #8A6A4A !important;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85em;
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -381,9 +445,10 @@
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- MAIN CONTENT -->
 <div class="container">
 
+  <!-- MISSION -->
   <div class="intro-section">
     <h2>Our Mission</h2>
     <p>
@@ -393,51 +458,94 @@
     </p>
   </div>
 
-  <h2>Programs & Initiatives</h2>
+  <!-- WHAT WE OFFER -->
+  <div class="offer-section">
+    <h2>What We Offer</h2>
 
-  <div class="programs">
-    <div class="program-card">
-      <h4>⚖️ National Mock Trial Competition</h4>
-      <p>Our flagship program brings together students from across the country to compete in realistic courtroom simulations.</p>
-    </div>
+    <div class="programs-list">
 
-    <div class="program-card">
-      <h4>📚 Legal Education Workshops</h4>
-      <p>We partner with legal professionals to deliver hands-on workshops in advocacy, evidence, and courtroom procedure.</p>
-    </div>
+      <div class="program-item">
+        <h4>⚖️ Mock Trial Education</h4>
+        <p>We provide structured legal education for youth, focusing on advocacy, courtroom skills, and justice literacy.</p>
+      </div>
 
-    <div class="program-card">
-      <h4>🏫 School Partnerships</h4>
-      <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      <div class="program-item">
+        <h4>📚 Workshops & Training</h4>
+        <p>Our workshops are led by legal professionals, offering hands‑on experience in evidence, argumentation, and procedure.</p>
+      </div>
+
+      <div class="program-item">
+        <h4>🏛️ National Competitions</h4>
+        <p>We organize Finland’s leading youth mock trial competitions, including the Helsinki Youth Mock Trial.</p>
+      </div>
+
+      <div class="program-item">
+        <h4>🤝 School Partnerships</h4>
+        <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      </div>
+
     </div>
   </div>
 
-  <div class="join-big">
-    <h3>Want to get involved in Youth Mock Trial ry?</h3>
-    <p>
-      Whether you are a student, teacher, legal professional, or community member, there are many ways to
-      participate in Youth Mock Trial ry. Join us in expanding access to legal education and empowering
-      the next generation of advocates.
-    </p>
-    <a href="join.html" class="button">Learn more about joining us</a>
+  <!-- PROGRAMS & INITIATIVES — BEIGE BOXES -->
+  <div class="programs-section">
+    <h2>Programs & Initiatives</h2>
+
+    <div class="programs-grid">
+
+      <div class="program-box">
+        <h4>⚖️ National Mock Trial Competition</h4>
+        <p>Our flagship program brings together students from across the country to compete in realistic courtroom simulations.</p>
+      </div>
+
+      <div class="program-box">
+        <h4>📚 Legal Education Workshops</h4>
+        <p>We partner with legal professionals to deliver hands-on workshops in advocacy, evidence, and courtroom procedure.</p>
+      </div>
+
+      <div class="program-box">
+        <h4>🏫 School Partnerships</h4>
+        <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
+      </div>
+
+    </div>
   </div>
 
-  <h2>Latest News</h2>
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <p>Want to get involved in Youth Mock Trial ry?</p>
+    <a href="join.html" class="cta-button">Join Us</a>
+  </div>
 
-  <div class="news-grid">
-    <div class="news-card">
-      <h4>📰 HYMT 2026 Registration Opens</h4>
-      <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and teams.</p>
-    </div>
+  <!-- NEWS -->
+  <div class="news-wrapper">
+    <div class="news-section">
+      <h2>Latest News</h2>
 
-    <div class="news-card">
-      <h4>🤝 New Partnership Announced</h4>
-      <p>We are expanding our collaboration with legal organizations to reach more youth across Finland.</p>
-    </div>
+      <div class="news-cards">
 
-    <div class="news-card">
-      <h4>🎓 Workshop Series Launch</h4>
-      <p>A new workshop series will offer hands-on training in advocacy, evidence, and courtroom procedure.</p>
+        <div class="news-card">
+          <h3>HYMT 2026 Registration Opens</h3>
+          <div class="date">July 2026</div>
+          <p>Registration for the Helsinki Youth Mock Trial 2026 competition is now open for schools and independent teams.</p>
+          <a href="#">Read more →</a>
+        </div>
+
+        <div class="news-card">
+          <h3>New Partnership with Legal Aid Finland</h3>
+          <div class="date">June 2026</div>
+          <p>Youth Mock Trial ry is proud to announce a new collaboration with Legal Aid Finland to expand access to legal education.</p>
+          <a href="#">Read more →</a>
+        </div>
+
+        <div class="news-card">
+          <h3>Volunteer Judge Applications Now Open</h3>
+          <div class="date">May 2026</div>
+          <p>We are seeking volunteer judges, lawyers, and law students to support our upcoming competitions and workshops.</p>
+          <a href="#">Read more →</a>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -452,38 +560,16 @@
       <p>Advancing legal education for youth across Finland.</p>
     </div>
 
-    <div class="footer-section socials">
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: info@youthmocktrial.fi</p>
+      <p>Location: Helsinki, Finland</p>
+    </div>
+
+    <div class="footer-section">
       <h4>Follow Us</h4>
       <a href="#">Instagram</a>
       <a href="#">TikTok</a>
       <a href="#">LinkedIn</a>
-    </div>
-
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="hymt.html">HYMT</a><br>
-      <a href="join.html">Join Us</a><br>
-      <a href="news.html">News</a><br>
-      <a href="about.html">About Us</a><br>
-      <a href="contact.html">Contact</a>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2026 Youth Mock Trial ry — All Rights Reserved
-  </div>
-</footer>
-
-<script>
-  document.querySelector('.mobile-menu').addEventListener('click', () => {
-    document.querySelector('.mobile-menu').classList.remove('open');
-  });
-</script>
-
-</body>
-</html>
-
-
-
+    </
 
