@@ -21,15 +21,13 @@
       line-height: 1.7;
     }
 
-    /* HERO SECTION */
+    /* HEADER / HERO */
     .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 100px 40px;
+      padding: 90px 40px;
       background: #F5EFE7;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
     /* BLOBS */
@@ -64,57 +62,34 @@
       100% { transform: translateY(0px); }
     }
 
-    /* LEFT SIDE */
-    .hero-left {
-      max-width: 55%;
+    /* HERO TEXT */
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3.8em;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      color: #2E1F14;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+      margin-bottom: 15px;
+      position: relative;
       z-index: 2;
     }
 
-    .hero-left h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 3.5em;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -0.7px;
-      color: #2E1F14;
-      background: transparent;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-    }
-
-    .hero-left p {
-      font-size: 1.2em;
+    .hero p {
+      font-size: 1.1em;
       opacity: 0.85;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
     }
 
     .org-type {
-      font-size: 1em;
+      font-size: 0.95em;
       opacity: 0.6;
       font-weight: 600;
       letter-spacing: 0.5px;
-      margin-top: 8px;
-    }
-
-    /* RIGHT SIDE — LOGO */
-    .hero-right {
       position: relative;
       z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .logo-img {
-      width: 240px;
-      height: auto;
-      display: block;
-      background: transparent;
-
-      /* Transparency helper (temporary until you upload original file) */
-      filter:
-        drop-shadow(0 0 1px rgba(255,255,255,0.9))
-        drop-shadow(0 0 2px rgba(255,255,255,0.7))
-        drop-shadow(0 0 3px rgba(0,0,0,0.2));
     }
 
     /* DIVIDER */
@@ -130,13 +105,18 @@
     nav {
       background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
+      padding: 16px 20px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .nav-links {
+      display: flex;
       gap: 20px;
-      padding: 16px 10px;
-      border-radius: 0 0 20px 20px;
-      overflow-x: auto;
-      white-space: nowrap;
     }
 
     nav a {
@@ -146,12 +126,42 @@
       padding: 10px 18px;
       border-radius: 10px;
       transition: 0.3s ease;
-      flex-shrink: 0;
     }
 
     nav a:hover {
       background: #F0F0F0;
       transform: translateY(-2px);
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #1A1A1A;
+      border-radius: 2px;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E6E2DD;
+      padding: 10px 20px;
+    }
+
+    .mobile-menu a {
+      padding: 12px 0;
+      font-weight: 600;
+      color: #1A1A1A;
+      text-decoration: none;
     }
 
     /* CONTENT */
@@ -263,45 +273,26 @@
       position: relative;
     }
 
-    /* MOBILE — OPTION B */
+    /* MOBILE */
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 20px;
+      nav .nav-links {
+        display: none;
       }
 
-      .hero-left {
-        max-width: 100%;
+      .hamburger {
+        display: flex;
       }
 
-      .hero-left h1 {
-        font-size: 2.6em; /* BIG title */
+      .hero h1 {
+        font-size: 2.8em;
       }
 
-      .hero-left p {
-        font-size: 0.95em; /* small subtitle */
+      .hero p {
+        font-size: 0.95em;
       }
 
       .org-type {
         font-size: 0.8em;
-      }
-
-      .hero-right {
-        margin-top: 25px;
-      }
-
-      .logo-img {
-        width: 150px; /* small logo */
-      }
-
-      nav {
-        justify-content: flex-start;
-      }
-
-      nav a {
-        padding: 12px 14px;
-        font-size: 0.85em;
       }
 
       .container {
@@ -310,12 +301,8 @@
     }
 
     @media (max-width: 480px) {
-      .hero-left h1 {
-        font-size: 2.2em;
-      }
-
-      .logo-img {
-        width: 130px;
+      .hero h1 {
+        font-size: 2.3em;
       }
 
       h2 {
@@ -327,6 +314,14 @@
       }
     }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.mobile-menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+
 </head>
 
 <body>
@@ -336,21 +331,34 @@
   <div class="blob brown"></div>
   <div class="blob tan"></div>
 
-  <div class="hero-left">
-    <h1>Youth Mock Trial ry</h1>
-    <p>Empowering the next generation of legal professionals</p>
-    <div class="org-type">Non Profit Organization</div>
-  </div>
-
-  <div class="hero-right">
-    <img class="logo-img" src="logo.png" alt="Youth Mock Trial ry">
-  </div>
+  <h1>Youth Mock Trial ry</h1>
+  <p>Empowering the next generation of legal professionals</p>
+  <div class="org-type">Non Profit Organization</div>
 </div>
 
 <div class="divider"></div>
 
 <!-- NAV -->
 <nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="hymt.html">HYMT</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="contact.html">Contacts</a>
+    <a href="join.html">Join Us</a>
+    <a href="events.html">Other Events</a>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="hymt.html">HYMT</a>
@@ -358,7 +366,7 @@
   <a href="contact.html">Contacts</a>
   <a href="join.html">Join Us</a>
   <a href="events.html">Other Events</a>
-</nav>
+</div>
 
 <!-- CONTENT -->
 <div class="container">
@@ -405,4 +413,5 @@
 
 </body>
 </html>
+
 
