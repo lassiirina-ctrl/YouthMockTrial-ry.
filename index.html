@@ -19,86 +19,23 @@
       background: #FFFFFF;
       color: #1A1A1A;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    /* HEADER / HERO */
-    .hero {
-      padding: 90px 40px;
-      background: #F5EFE7;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* BLOBS */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.45;
-      filter: blur(2px);
-      animation: float 6s ease-in-out infinite;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .blob.brown {
-      background: #8A6A4A;
-      width: 420px;
-      height: 420px;
-      top: -120px;
-      left: -80px;
-    }
-
-    .blob.tan {
-      background: #D8C0A8;
-      width: 380px;
-      height: 380px;
-      bottom: -140px;
-      left: 40px;
-      animation-delay: 2s;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(25px); }
-      100% { transform: translateY(0px); }
-    }
-
-    /* HERO TEXT */
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 3.8em;
-      font-weight: 700;
-      letter-spacing: -0.7px;
-      color: #2E1F14;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero p {
-      font-size: 1.1em;
-      opacity: 0.85;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .org-type {
-      font-size: 0.95em;
-      opacity: 0.6;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* DIVIDER */
-    .divider {
-      width: 100%;
-      height: 50px;
-      background: #F5EFE7;
-      border-bottom-left-radius: 100% 40px;
-      border-bottom-right-radius: 100% 40px;
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     /* NAVIGATION */
@@ -112,6 +49,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      animation: fadeIn 0.8s ease-out;
     }
 
     nav .nav-links {
@@ -155,6 +93,7 @@
       background: #FFFFFF;
       border-bottom: 1px solid #E6E2DD;
       padding: 10px 20px;
+      animation: fadeIn 0.4s ease-out;
     }
 
     .mobile-menu a {
@@ -164,19 +103,70 @@
       text-decoration: none;
     }
 
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 520px;
+      background: url('photo1.jpg') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #FFFFFF;
+      max-width: 700px;
+      padding: 20px;
+      animation: fadeUp 1.2s ease-out;
+    }
+
+    .hero-content h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3.4em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+
+    .org-type {
+      font-size: 0.95em;
+      opacity: 0.8;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
     /* CONTENT */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
+      animation: fadeUp 1s ease-out;
     }
 
     h2 {
       font-family: "Playfair Display", serif;
-      font-size: 2.6em;
+      font-size: 2.4em;
       margin-bottom: 20px;
       position: relative;
       color: #5A4632;
+      animation: slideIn 0.8s ease-out;
     }
 
     h2::before {
@@ -198,6 +188,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 60px;
+      animation: fadeUp 1s ease-out;
     }
 
     .intro-section p {
@@ -205,59 +196,51 @@
       color: #333;
     }
 
-    /* FEATURES */
-    .features {
+    /* PROGRAMS */
+    .programs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
 
-    .feature-card {
+    .program-card {
       background: #FFFFFF;
       padding: 40px;
       border: 1px solid #E0E0E0;
       border-radius: 16px;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      animation: fadeUp 1s ease-out;
     }
 
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: #D8C0A8;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-      border-radius: 16px 16px 0 0;
-    }
-
-    .feature-card:hover {
-      border: 1px solid #8A6A4A;
+    .program-card:hover {
+      border-color: #8A6A4A;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       transform: translateY(-4px);
     }
 
-    .feature-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .feature-card h4 {
-      font-size: 1.5em;
+    .program-card h4 {
+      font-size: 1.4em;
       font-weight: 700;
       color: #5A4632;
       margin-bottom: 15px;
     }
 
-    .feature-card p {
-      color: #555555;
-      font-size: 0.98em;
-      line-height: 1.8;
+    /* PHOTO SECTION */
+    .photo-section {
+      margin-top: 80px;
+      background: #F5EFE7;
+      padding: 60px 20px;
+      border-radius: 12px;
+      animation: fadeUp 1s ease-out;
+    }
+
+    .photo-section img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-out;
     }
 
     /* FOOTER */
@@ -270,7 +253,7 @@
       font-size: 0.9em;
       letter-spacing: 0.5px;
       border-top: 1px solid #E0E0E0;
-      position: relative;
+      animation: fadeIn 1s ease-out;
     }
 
     /* MOBILE */
@@ -283,16 +266,17 @@
         display: flex;
       }
 
-      .hero h1 {
-        font-size: 2.8em;
+      .hero {
+        height: 380px;
+        background-attachment: scroll;
       }
 
-      .hero p {
-        font-size: 0.95em;
+      .hero-content h1 {
+        font-size: 2.4em;
       }
 
-      .org-type {
-        font-size: 0.8em;
+      .hero-content p {
+        font-size: 1em;
       }
 
       .container {
@@ -301,15 +285,15 @@
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2.3em;
+      .hero-content h1 {
+        font-size: 2em;
       }
 
       h2 {
         font-size: 1.6em;
       }
 
-      .feature-card {
+      .program-card {
         padding: 20px;
       }
     }
@@ -325,18 +309,6 @@
 </head>
 
 <body>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="blob brown"></div>
-  <div class="blob tan"></div>
-
-  <h1>Youth Mock Trial ry</h1>
-  <p>Empowering the next generation of legal professionals</p>
-  <div class="org-type">Non Profit Organization</div>
-</div>
-
-<div class="divider"></div>
 
 <!-- NAV -->
 <nav>
@@ -368,41 +340,51 @@
   <a href="events.html">Other Events</a>
 </div>
 
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Youth Mock Trial ry</h1>
+    <p>Empowering the next generation of legal professionals</p>
+    <div class="org-type">Non Profit Organization</div>
+  </div>
+</div>
+
 <!-- CONTENT -->
 <div class="container">
 
   <div class="intro-section">
-    <h2>Welcome</h2>
+    <h2>Our Mission</h2>
     <p>
-      Youth Mock Trial ry is a national organization dedicated to providing young people with
-      hands-on experience in law, advocacy, and courtroom procedure. Our mission is to make
-      legal education accessible, engaging, and empowering. Join us as we shape the legal minds
-      of tomorrow.
+      Youth Mock Trial ry is committed to advancing legal education for young people across Finland.
+      Through structured programs, courtroom simulations, and national competitions, we provide
+      students with the tools to understand justice, advocacy, and civic responsibility.
     </p>
   </div>
 
-  <h2>What We Offer</h2>
+  <h2>Programs & Initiatives</h2>
 
-  <div class="features">
-    <div class="feature-card">
-      <h4>🏛️ National Competitions</h4>
-      <p>Participate in our nationally-recognized mock trial competitions that challenge your legal knowledge, presentation skills, and courtroom expertise.</p>
+  <div class="programs">
+    <div class="program-card">
+      <h4>National Mock Trial Competition</h4>
+      <p>Our flagship program brings together students from across the country to compete in realistic courtroom simulations.</p>
     </div>
 
-    <div class="feature-card">
-      <h4>📚 Professional Training</h4>
-      <p>Access comprehensive workshops and training programs led by experienced legal professionals and renowned educators in the field.</p>
+    <div class="program-card">
+      <h4>Legal Education Workshops</h4>
+      <p>We partner with legal professionals to deliver hands-on workshops in advocacy, evidence, and courtroom procedure.</p>
     </div>
 
-    <div class="feature-card">
-      <h4>🤝 Strategic Partnerships</h4>
-      <p>Connect with schools and youth organizations nationwide to expand your network and unlock new opportunities for growth.</p>
+    <div class="program-card">
+      <h4>School Partnerships</h4>
+      <p>We collaborate with schools to integrate mock trial programs into their curriculum and extracurricular offerings.</p>
     </div>
+  </div>
 
-    <div class="feature-card">
-      <h4>⚖️ Real Courtroom Skills</h4>
-      <p>Learn and practice authentic courtroom procedures, evidence examination, cross-examination, and legal argumentation techniques.</p>
-    </div>
+  <div class="photo-section">
+    <h2>Our Work in Action</h2>
+    <img src="photo2.jpg" alt="Youth Mock Trial Event">
   </div>
 
 </div>
@@ -413,5 +395,6 @@
 
 </body>
 </html>
+
 
 
