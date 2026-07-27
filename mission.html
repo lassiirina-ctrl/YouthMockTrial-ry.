@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us – Youth Mock Trial ry</title>
+  <title>Our Mission – Youth Mock Trial ry</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -177,14 +177,15 @@
       line-height: 1.8;
     }
 
-    /* VALUES */
-    .values-row {
+    /* IMPACT BOXES */
+    .impact-row {
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
       margin-top: 30px;
     }
-    .value-box {
+
+    .impact-box {
       flex: 1;
       min-width: 250px;
       background: #F5EFE7;
@@ -193,33 +194,11 @@
       border: 1px solid #E0D6CC;
       text-align: center;
     }
-    .value-box h3 {
+
+    .impact-box h3 {
       font-size: 1.3em;
       color: #5A4632;
       margin-bottom: 10px;
-    }
-
-    /* LEADERSHIP */
-    .leaders {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .leader-card {
-      background: #FAFAFA;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #E0E0E0;
-    }
-    .leader-card h4 {
-      font-size: 1.2em;
-      color: #5A4632;
-      margin-bottom: 6px;
-    }
-    .leader-card p {
-      font-size: 0.95em;
-      color: #555;
     }
 
     /* FOOTER */
@@ -276,6 +255,7 @@
       <button class="dropbtn">About Us</button>
       <div class="dropdown-menu">
         <a href="about.html">Overview</a>
+        <a href="mission.html">Mission</a>
         <a href="#">Leadership</a>
         <a href="#">Sponsors</a>
       </div>
@@ -306,6 +286,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="about.html">About Us</a>
+  <a href="mission.html">Mission</a>
   <a href="hymt.html">HYMT</a>
   <a href="join.html">Join Us</a>
   <a href="news.html">News</a>
@@ -314,75 +295,49 @@
 
 <!-- HERO -->
 <div class="hero">
-  <h1>About Us</h1>
+  <h1>Our Mission</h1>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="container">
 
-  <!-- WHO WE ARE -->
+  <!-- MISSION STATEMENT -->
   <div class="section">
-    <h2>Who We Are</h2>
+    <h2>What Drives Us</h2>
     <p>
-      Youth Mock Trial ry is a national nonprofit dedicated to strengthening civic engagement and legal literacy among youth across Finland.
-      We work with schools, legal professionals, and community partners to create accessible pathways into the world of law, advocacy, and justice.
+      Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life. 
+      We believe that legal literacy is a cornerstone of democracy — and that every young person deserves access to tools that help them think critically, advocate effectively, and engage responsibly.
     </p>
   </div>
 
-  <!-- MISSION -->
+  <!-- WHY IT MATTERS -->
   <div class="section">
-    <h2>Our Mission</h2>
+    <h2>Why Our Mission Matters</h2>
     <p>
-      Our mission is to empower young people with the knowledge, confidence, and skills needed to understand the justice system and participate meaningfully in civic life.
-      Through courtroom simulations, workshops, and national competitions, we help students develop critical thinking, advocacy, and leadership abilities.
+      In a world shaped by laws, rights, and responsibilities, understanding how justice works is essential. 
+      Youth Mock Trial ry helps students explore real legal concepts through hands‑on learning, courtroom simulations, and mentorship from legal professionals.
+      These experiences build confidence, leadership, and a deeper understanding of civic engagement.
     </p>
   </div>
 
-  <!-- VALUES -->
+  <!-- IMPACT -->
   <div class="section">
-    <h2>Our Values</h2>
+    <h2>Our Impact</h2>
 
-    <div class="values-row">
-      <div class="value-box">
-        <h3>Integrity</h3>
-        <p>We promote fairness, honesty, and respect in all aspects of our work.</p>
-      </div>
-
-      <div class="value-box">
+    <div class="impact-row">
+      <div class="impact-box">
         <h3>Education</h3>
-        <p>We believe legal literacy is essential for empowered citizenship.</p>
+        <p>Hundreds of students each year gain access to legal learning opportunities.</p>
       </div>
 
-      <div class="value-box">
+      <div class="impact-box">
+        <h3>Empowerment</h3>
+        <p>Participants build advocacy skills, public speaking confidence, and critical thinking.</p>
+      </div>
+
+      <div class="impact-box">
         <h3>Community</h3>
-        <p>We collaborate with schools, families, and legal professionals to support youth.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- LEADERSHIP -->
-  <div class="section">
-    <h2>Leadership</h2>
-
-    <div class="leaders">
-      <div class="leader-card">
-        <h4>Person Name</h4>
-        <p>Chairperson</p>
-      </div>
-
-      <div class="leader-card">
-        <h4>Person Name</h4>
-        <p>Vice Chair</p>
-      </div>
-
-      <div class="leader-card">
-        <h4>Person Name</h4>
-        <p>Program Director</p>
-      </div>
-
-      <div class="leader-card">
-        <h4>Person Name</h4>
-        <p>Community Outreach Lead</p>
+        <p>We connect youth with lawyers, judges, and educators across Finland.</p>
       </div>
     </div>
   </div>
@@ -437,4 +392,3 @@ function toggleMenu() {
 
 </body>
 </html>
-
